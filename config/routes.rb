@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   get '/groups/:id/invites', to: 'invites#new', as: 'invites_new'
 
-  post 'invites/create', to: 'invites#create', as: 'invites_create'
+  post '/invites/create', to: 'invites#create', as: 'invites_create'
 
   ############################
 
@@ -36,9 +36,9 @@ Rails.application.routes.draw do
 
   ############################
 
-  get '/gifts/new'
+  get '/groups/:id/gifts', to: 'gifts#new', as: 'gifts_new'
 
-  get '/gifts/create'
+  post '/gifts/create', to: 'gifts#create', as: 'gifts_create'
 
 
 

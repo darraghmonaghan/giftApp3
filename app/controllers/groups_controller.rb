@@ -4,6 +4,10 @@ class GroupsController < ApplicationController
 
   def show
   	@group = Group.find(params[:id])
+    @vote = Vote.new
+    @post = Post.new
+    @founder = User.find(@group.user_id)
+    @members = Membership.where(:group_id => @group.id)
   end
 
   def new

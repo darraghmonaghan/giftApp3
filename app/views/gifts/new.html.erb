@@ -1,2 +1,47 @@
-<h1>Gifts#new</h1>
-<p>Find me in app/views/gifts/new.html.erb</p>
+
+<%= render "partials/navbar" %>
+
+
+<div id="main-container" class="container">
+    <div class="row">
+      <div id="content" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+
+        <div class="form-container">
+        
+            <h2 class="form-signin-heading text-center">Propose a New Gift!</h2>
+		        <%= form_for @gift , :url => gifts_create_path do |f| %> 
+
+		            <%= f.hidden_field :group_id, :value => params[:id] %>
+		            <%= f.hidden_field :user_id, :value => current_user.id %>
+
+		            <div class="form-group">
+		              <%= f.text_field :title, placeholder: 'Gift Title', class: "form-control", required: true %>
+		            </div>
+		        
+		            <div class="form-group">
+		              <%= f.text_field :description, placeholder: 'Description of the Gift', class: "form-control", required: true %>
+		            </div>
+
+		           	<div class="form-group">
+		              <%= f.text_field :URL, placeholder: 'Add a URL where we can find out more!', class: "form-control", required: true %>
+		            </div>
+
+		            <div class="form-group">
+		              <%= f.number_field :price, placeholder: 'Retail Price', class: "form-control", required: true %>
+		            </div>
+
+		            <div class='panel panel-default'>
+		            	<div class='panel-body'>
+			            	<p>Select an Image of the Gift to Upload</p>
+			            	<%= f.file_field :avatar %>
+			            </div>
+		           	</div><br>
+
+		            <%= f.submit "Post Gift Idea!", class: "btn btn-default ghost-button" %>
+
+              	<% end %>
+             </div>
+        </div>
+      </div>
+    </div>
+</div>
