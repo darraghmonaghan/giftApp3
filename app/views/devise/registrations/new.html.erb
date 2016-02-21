@@ -31,9 +31,14 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div>
+    <%= link_to image_tag('/assets/images/blue-on-light.png'), user_omniauth_authorize_path(:stripe_connect) %>
+  </div>  
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
