@@ -1,13 +1,8 @@
 class DashboardController < ApplicationController
 
-	before_action :authenticate_user!
+	before_filter :authenticate_user!
 
 	def index
-
-	end
-
-
-	def show
 	 	@group_ids = []
       	@newsfeed_posts = []
 
@@ -30,6 +25,14 @@ class DashboardController < ApplicationController
 	        end
 	    end
 
+
+	end
+
+
+	def show
+	 	# if params[:id] !== current_user.id
+	 	# 	redirect_to root_path
+	 	# end
 
 	end
 
