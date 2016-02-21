@@ -20,7 +20,7 @@
 					<h4>Time: <%= @group.time %></h4>
 				</div>
 				<div class='text-center col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-					
+					<h4>Group Creator: <%= @founder.email %></h4>
 				</div>
 			</div>
 
@@ -34,6 +34,29 @@
 				<div class='panel-heading'><h4>Group Newsfeed:</h4></div>
 					<div class='panel-body'>
 
+						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
+
+								<% @group.posts.each do | x | %>
+									<%= x.content %><div class='pull-right'><%= time_ago_in_words(x.created_at) %> ago by <%= x.user.email %></div>
+									
+									<hr>
+								<% end %>
+						</div><br>
+
+						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
+					        <%= form_for @post , :url => posts_create_path do |f| %> 
+
+					            <%= f.hidden_field :group_id, :value => params[:id] %>
+					            <%= f.hidden_field :user_id, :value => current_user.id %>
+
+					            <div class="form-group">
+					              <%= f.text_field :content, placeholder: 'What would you like to say?', class: "form-control", required: true %>
+					            </div>
+
+					            <%= f.submit "Post Comment!", class: "btn btn-default ghost-button" %>
+
+			              	<% end %>
+			            </div>
 
 
 			        </div>
@@ -48,8 +71,13 @@
 		<!-- MEMBERS LIST -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4>Member Count: </h4></div>
+				<div class='panel-heading'><h4>Member Count: <%= @members.count %></h4></div>
 
+					<ul>
+						<% @group.users.each do | a | %>
+							<li><%= a.email %></li>
+						<% end %>
+					</ul>	
 
 			</div>
 		</div>
@@ -60,8 +88,34 @@
 				<div class='panel panel-default'>
 					<div class='panel-heading'><h4>Gift Ideas:</h4></div>
 
+						<% @group.gifts.each do |a| %>
+							<div class='panel-body'>
+								<div class='row'>
+									<div class='col-xs-4 col-sm-4 col-md-3'>
+										<%= image_tag a.avatar.url(:thumb) %>
+									</div>
+									<div class='col-xs-8 col-sm-8 col-md-9'>
+										<h4><%= a.title %></h4>
+										<h5><%= a.description %></h5>
+										<a href='<%= a.URL %>'>Find out More!</a>
+										<hr>
 
-				</ul>
+										<div class='row'>
+											<div class='col-xs-7 col-sm-6 col-md-6'>
+												<p><strong>Gift Price:</strong> <%= a.price %></p>
+												<p><strong>No. of Votes:</strong> <%= a.votes.count %></p>
+											</div>
+											<div class='col-xs-5 col-sm-6 col-md-6'>				
+												<%= button_to 'Up Vote!', votes_create_path(:vote => { :gift_id => a.id, :user_id => current_user.id}), class: "btn btn-default", :method => :post %>
+											</div>
+										</div>
+
+									</div>
+								</div> <!-- Row -->
+							</div>
+							<hr>
+					<% end %>
+
 		</div>
 
 	</div><!-- Row -->

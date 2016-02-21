@@ -23,8 +23,7 @@
 	      	  	
 				<% if user_signed_in? %>
 
-					<li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
-			      	<li><%= link_to "Profile Page", dashboard_path(current_user.id), class: "nav-text" %></li>
+			      	<li><%= link_to "Profile Page", dashboard_index_path, class: "nav-text" %></li>
 			      	<li><%= link_to "Create a Group", groups_new_path, class: "nav-text" %></li>
 			      	<li>Make a Donation</li>
 			      	<li><%= link_to "Invite Members", invites_new_path, class: "nav-text" %></li>

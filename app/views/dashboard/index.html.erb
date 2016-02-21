@@ -1,9 +1,9 @@
-<%= render "partials/fullNavbar" %>
 
+<%= render "partials/navbar" %>
 
 <div class='container'>
 
-	<h1>Dashboard Page</h1>
+	<h1>Dashboard Index Page</h1>
 
 	<h1>Hi, <%= current_user.email %></h1>
 	<hr>
@@ -16,6 +16,12 @@
 
 						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
 
+ 								<% @newsfeed_posts.each do | x | %>
+
+									<div><strong><%= x.user.firstname %> - "<%= x.content %>"</strong></div>
+									<div><i>Event: <%= x.group.title %> - <%= time_ago_in_words(x.created_at) %></i></div>
+									<hr>
+								<% end %>
 
 
 						</div><br>
@@ -32,6 +38,12 @@
 			<div class='list-group'>
 				<div class='list-group-item disabled'><h4>Events you are Organizing:</h4></div>
 
+						<% @group_owner_objects.each do | m | %>	
+							<a href='/groups/<%= m.id %>' class='list-group-item'>
+									<div><strong><%= m.title %></strong></div>
+									<div><i><%= m.date.strftime('%v') %></i></div>
+							</a>
+						<% end %>
 
 			</div>
 		</div>
@@ -41,7 +53,12 @@
 			<div class='list-group'>
 				<div class='list-group-item disabled'><h4>Events you are Involved In:</h4></div>
 
-
+						<% @user.groups.each do | b | %>
+								<a href='/groups/<%= b.id %>' class='list-group-item'>
+									<div><strong><%= b.title %></strong></div>
+									<div><i><%= b.date.strftime('%v') %></i></div>
+								</a>
+						<% end %>
 
 			</div>
 		</div>
