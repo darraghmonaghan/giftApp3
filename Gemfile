@@ -32,6 +32,8 @@ gem "paperclip", "~> 4.3"
 gem "figaro"
 
 gem 'omniauth-stripe-connect'
+
+gem 'stripe'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

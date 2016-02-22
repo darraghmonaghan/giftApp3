@@ -20,11 +20,17 @@ class GroupsController < ApplicationController
     #Membership.create(:user_id => @group.user_id, :group_id => @group.id)
 
       if @group.save
-        redirect_to groups_show_path(@group.id)
+        redirect_to group_stripe_path(@group.id)
       else
         redirect_to root_path
       end
   end
+
+
+  def stripe
+  end
+
+
 
 private
 
