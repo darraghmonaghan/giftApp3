@@ -8,20 +8,36 @@
 
 			<h1>Invite a Friend to the Group</h1>
 
-				<div class='col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>
-
-						<%= form_for @invite , :url => invites_create_path do |f| %>
+						<%= form_for :invite, :url => invites_create_path do |f| %>
 
 						    <%= f.hidden_field :group_id, :value => params[:id] %>
 
 						    <div class="form-group">
-						    <%= f.email_field :email, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
+						    <%= f.email_field :email1, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
+						    </div>
+
+						    <div class="form-group">
+						    <%= f.email_field :email2, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
+						    </div>
+
+						    <div class="form-group">
+						    <%= f.email_field :email3, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
+						    </div>
+
+						    <div class="form-group">
+						    <%= f.email_field :email4, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
+						    </div>
+
+						    <div class="form-group">
+						    <%= f.email_field :email5, placeholder: 'Invitees e-mail address', class: "form-control", required: true %>
 						    </div>
 
 						    <%= f.submit 'Send', class: "btn btn-default ghost-button" %>
 						
 						<% end %>
 
-				</div>
+
+
+
 		</div>
 	</div>

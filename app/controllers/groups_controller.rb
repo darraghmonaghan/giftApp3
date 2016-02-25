@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
   end
 
 
+
   def create
     @group = Group.create(group_params)
     #Membership.create(:user_id => @group.user_id, :group_id => @group.id)
