@@ -34,12 +34,19 @@ Rails.application.routes.draw do
 
   post '/groups/create', to: 'groups#create', as: 'create_group'
 
+  get '/groups/:id/stripe', to: 'groups#stripe', as: 'group_stripe'
+
   ############################
 
   get '/groups/:id/gifts', to: 'gifts#new', as: 'gifts_new'
 
   post '/gifts/create', to: 'gifts#create', as: 'gifts_create'
 
+  ############################
+
+  get '/groups/:id/payments', to: 'payments#new', as: 'new_payment'
+
+  post 'payments/create', to: 'payments#create'
 
 
 end
