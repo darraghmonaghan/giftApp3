@@ -6,13 +6,14 @@
 
 .font1 {
 	font-family: 'Open Sans Condensed', sans-serif;
+	color: #89bdd3;
 }
 
 
 .font2 {
 	font-family: 'Lobster Two', cursive;
 	font-weight: bold;
-	color: #89bdd3;
+	color: #e05915;
 }
 
 .font3 {
@@ -35,27 +36,37 @@
 	background-color: #e3e3e3;
 }
 
-.nav {
-	color: #e3e3e3;
+
+.btn {
+	border-color: #9ad3de;
+	background: #9ad3de;
+	color: white;	
+}
+
+.btn:hover {
+	background: white;
+	border-color: #9ad3de;
+	color: #9ad3de;
 }
 
 
-
-.panel-heading {
-	background-color: red;
-	border-color: #c9c9c9;
-
+.panel > .panel-heading {
+	color: #c9c9c9;
+	border-color: #9ad3de;
 }
 
-.panel-heading.h4 {
-	color: #89bdd3;
+.panel-default {
+	border-color: #9ad3de;
 }
 
-.panel {
-	border-color: #c9c9c9;
+hr {
+    height: 1px;
+    border-top: 1px solid #e3e3e3;
+    margin: 1em 0;
+}
+
+.form-control {
+	border-color: #9ad3de;	
 }
 
 
-.hr {
-	border-color: #89bdd3;	
-}
