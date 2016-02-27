@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.create(group_params)
-    #Membership.create(:user_id => @group.user_id, :group_id => @group.id)
+    Membership.create(:user_id => @group.user_id, :group_id => @group.id)
 
       if @group.save
         redirect_to group_stripe_path(@group.id)

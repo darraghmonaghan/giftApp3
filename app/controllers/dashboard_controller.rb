@@ -3,13 +3,12 @@ class DashboardController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
-	 	@group_ids = []
-      	@newsfeed_posts = []
-
-      	# Preparing groups invovled in      
-      	@group_objects = []
-      	@group_owner_objects = []
       	@user = current_user
+	 	groups = []
+      	@newsfeed_posts = []
+      	@groups_involved = []
+      	@group_owner_objects = []
+
 
       	# Preparing groups owner / organiser of
       	group_owner_objects = Group.where(:user_id => current_user.id)
@@ -18,13 +17,24 @@ class DashboardController < ApplicationController
       	end
 
 	    @user.groups.each do | group |
-	        @group_ids.push(group.id)
+	        groups.push(group)
 
 	        group.posts.each do | posts |
 	            @newsfeed_posts.push(posts)
 	        end
 	    end
 
+
+      	# Preparing groups invovled in      
+      	groups.each do | group |
+      		if group.user_id != @user.id
+      			@groups_involved.push(group)
+      		end
+      	end
+
+
+      	puts 'involved groups here....'
+      	puts @groups_involved
 
 	end
 

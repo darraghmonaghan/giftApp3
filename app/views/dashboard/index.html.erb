@@ -50,7 +50,7 @@
 			<div class='list-group'>
 				<div class='list-group-item disabled'><h4 class='font1'>Events you are Involved In:</h4></div>
 
-						<% @user.groups.each do | b | %>
+						<% @groups_involved.each do | b | %>
 								<a href='/groups/<%= b.id %>' class='list-group-item'>
 									<div><strong><%= b.title %></strong></div>
 									<div><i><%= b.date.strftime('%v') %></i></div>
