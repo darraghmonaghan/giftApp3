@@ -4,6 +4,26 @@
 
 
 
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: image-url('background.jpg');
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotext1 {
+	color: #252839;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+}
+
+#jumbotext2 {
+	color: #5e0231;
+}
+
+
+
 .font1 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #89bdd3;
@@ -12,7 +32,7 @@
 
 
 .font2 {
-	font-family: 'Lobster Two', cursive;
+	font-family: 'Courgette', cursive;
 	font-weight: bold;
 	color: #89bdd3;
 }
