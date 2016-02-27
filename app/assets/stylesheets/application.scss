@@ -7,13 +7,14 @@
 .font1 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	color: #89bdd3;
+	font-weight: bold;
 }
 
 
 .font2 {
 	font-family: 'Lobster Two', cursive;
 	font-weight: bold;
-	color: #e05915;
+	color: #89bdd3;
 }
 
 .font3 {
@@ -24,6 +25,16 @@
 .font4 {
 	font-family: 'Droid Sans', sans-serif;
 }
+
+.newsfeed1 {
+	color: #89bdd3;
+}
+
+.newsfeed2 {
+	color: #333333;
+}
+
+
 
 
 
@@ -38,35 +49,21 @@
 
 
 .btn {
-	border-color: #9ad3de;
-	background: #9ad3de;
+	border-color: #89bdd3;
+	background: #89bdd3;
 	color: white;	
 }
 
 .btn:hover {
 	background: white;
-	border-color: #9ad3de;
-	color: #9ad3de;
+	border-color: #89bdd3;
+	color: #89bdd3;
 }
 
-
-.panel > .panel-heading {
-	color: #c9c9c9;
-	border-color: #9ad3de;
-}
-
-.panel-default {
-	border-color: #9ad3de;
-}
 
 hr {
     height: 1px;
-    border-top: 1px solid #e3e3e3;
+    border-top: 1px solid #89bdd3;
     margin: 1em 0;
 }
-
-.form-control {
-	border-color: #9ad3de;	
-}
-
 

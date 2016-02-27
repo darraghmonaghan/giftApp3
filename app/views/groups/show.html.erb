@@ -38,7 +38,7 @@
 
 								<% @group.posts.each do | x | %>
 									
-									<div class='font4'>
+									<div class='newsfeed2'>
 										<%= x.content %>
 										<div class='pull-right'><%= time_ago_in_words(x.created_at) %> ago by <%= x.user.firstname %></div>
 									</div>
