@@ -3,18 +3,16 @@
 
 <div class='container'>
 
-	<h1>Dashboard Index Page</h1>
-
-	<h1>Hi, <%= current_user.firstname %></h1>
+	<h1 class='font2'>Hello, <%= current_user.firstname %></h1>
 	<hr>
 
 	<div class='row'>
 		<div class='col-sm-12 col-md-12 col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4>Your Newsfeed:</h4></div>
+				<div class='panel-heading'><h4 class='font1'>Your Newsfeed:</h4></div>
 					<div class='panel-body'>
 
-						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
+						<div class='font1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
 
  								<% @newsfeed_posts.each do | x | %>
 
@@ -22,7 +20,6 @@
 									<div><i>Event: <%= x.group.title %> - <%= time_ago_in_words(x.created_at) %></i></div>
 									<hr>
 								<% end %>
-
 
 						</div><br>
 
@@ -36,7 +33,7 @@
 
 		<div class='col-xs-12 col-sm-6 col-md-6'>
 			<div class='list-group'>
-				<div class='list-group-item disabled'><h4>Events you are Organizing:</h4></div>
+				<div class='font1 list-group-item disabled'><h4>Events you are Organizing:</h4></div>
 
 						<% @group_owner_objects.each do | m | %>	
 							<a href='/groups/<%= m.id %>' class='list-group-item'>
@@ -51,7 +48,7 @@
 
 		<div class='col-xs-12 col-sm-6 col-md-6'>
 			<div class='list-group'>
-				<div class='list-group-item disabled'><h4>Events you are Involved In:</h4></div>
+				<div class='list-group-item disabled'><h4 class='font1'>Events you are Involved In:</h4></div>
 
 						<% @user.groups.each do | b | %>
 								<a href='/groups/<%= b.id %>' class='list-group-item'>

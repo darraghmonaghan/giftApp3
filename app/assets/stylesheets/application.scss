@@ -1,3 +1,61 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+.font1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+.font2 {
+	font-family: 'Lobster Two', cursive;
+	font-weight: bold;
+	color: #89bdd3;
+}
+
+.font3 {
+	font-family: 'Lobster Two', cursive;
+}
+
+
+.font4 {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+
+
+.subheader {
+	color: #c9c9c9;
+}
+
+
+.navbar {
+	background-color: #e3e3e3;
+}
+
+.nav {
+	color: #e3e3e3;
+}
+
+
+
+.panel-heading {
+	background-color: red;
+	border-color: #c9c9c9;
+
+}
+
+.panel-heading.h4 {
+	color: #89bdd3;
+}
+
+.panel {
+	border-color: #c9c9c9;
+}
+
+
+.hr {
+	border-color: #89bdd3;	
+}

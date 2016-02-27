@@ -9,22 +9,19 @@ class InvitesController < ApplicationController
   	invite_addresses = []
   	group_id = params[:invite][:group_id]
 
+
   	if params[:invite][:email1] != '' 
         invite_addresses.push(params[:invite][:email1])
   	end
-
     if params[:invite][:email2] != '' 
         invite_addresses.push(params[:invite][:email2])
   	end
-
     if params[:invite][:email3] != '' 
         invite_addresses.push(params[:invite][:email3])
   	end
-
     if params[:invite][:email4] != '' 
         invite_addresses.push(params[:invite][:email4])
   	end
-
     if params[:invite][:email5] != '' 
         invite_addresses.push(params[:invite][:email5])
     end
@@ -58,11 +55,6 @@ private
 
   def invite_params
     params.require(:invite).permit(:group_id, :email1, :email2, :email3, :email4, :email5)  
-  end
-
-
-  def email_params
-  	params.require(:email).permit()
   end
 
 
