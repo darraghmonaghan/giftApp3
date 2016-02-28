@@ -7,20 +7,20 @@
 <div class='container'>
 
 	<!-- GROUP INFORMATION -->
-	<div class='row'>
+	<div class='subheader row'>
 		<div class='col-sm-12 col-md-12 col-lg-12'>
-			<h1 class='text-center'><%= @group.title %></h1>
-			<h3 class='text-center'><%= @group.description %></h3>
+			<h1 class='font2 text-center'><%= @group.title %></h1>
+			<h3 class='font2 text-center'><%= @group.description %></h3>
 
 			<div class='row'>
 				<div class='text-center col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-					<h4>Date: <%= @group.date.strftime('%v') %></h4>
+					<h4 class='font4'>Date: <%= @group.date.strftime('%v') %></h4>
 				</div>
 				<div class='text-center col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-					<h4>Time: <%= @group.time %></h4>
+					<h4 class='font4'>Time: <%= @group.time %></h4>
 				</div>
 				<div class='text-center col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-					<h4>Group Creator: <%= @founder.firstname %></h4>
+					<h4 class='font4'>Group Creator: <%= @founder.firstname %></h4>
 				</div>
 			</div>
 
@@ -31,14 +31,18 @@
 	<div class='row'>
 		<div class='col-sm-12 col-md-12 col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4>Group Newsfeed:</h4></div>
+				<div class='panel-heading'><h4 class='font1'>Group Newsfeed:</h4></div>
 					<div class='panel-body'>
 
 						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
 
 								<% @group.posts.each do | x | %>
-									<%= x.content %><div class='pull-right'><%= time_ago_in_words(x.created_at) %> ago by <%= x.user.firstname %></div>
 									
+									<div class='newsfeed2'>
+										<%= x.content %>
+										<div class='pull-right'><%= time_ago_in_words(x.created_at) %> ago by <%= x.user.firstname %></div>
+									</div>
+
 									<hr>
 								<% end %>
 						</div><br>
@@ -50,9 +54,9 @@
 					            <%= f.hidden_field :user_id, :value => current_user.id %>
 
 								<div class="input-group">
-									<%= f.text_field :content, placeholder: 'What would you like to say?', class: "form-control", required: true %>
+									<%= f.text_field :content, placeholder: 'What would you like to say?', class: "font4 form-control", required: true %>
 								   	<span class="input-group-btn">
-								        <%= f.submit "Post Comment!", class: "btn btn-default ghost-button pull-right" %>
+								        <%= f.submit "Post Comment!", class: "font4 btn btn-default ghost-button pull-right" %>
 								   	</span>
 								</div>
 
@@ -71,7 +75,7 @@
 		<!-- MEMBERS LIST -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4>Member Count: <%= @members.count %></h4></div>
+				<div class='panel-heading'><h4 class='font1'>Member Count: <%= @members.count %></h4></div>
 
 					<ul>
 						<% @group.users.each do | a | %>
@@ -86,7 +90,7 @@
 		<!-- GIFT IDEAS -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 				<div class='panel panel-default'>
-					<div class='panel-heading'><h4>Gift Ideas:</h4></div>
+					<div class='panel-heading'><h4 class='font1'>Gift Ideas:</h4></div>
 
 						<% @group.gifts.each do |a| %>
 							<div class='panel-body'>
@@ -95,18 +99,18 @@
 										<%= image_tag a.avatar.url(:thumb) %>
 									</div>
 									<div class='col-xs-8 col-sm-8 col-md-9'>
-										<h4><%= a.title %></h4>
-										<h5><%= a.description %></h5>
-										<a href='<%= a.URL %>'>Find out More!</a>
+										<h4 class='font3'><%= a.title %></h4>
+										<h5 class='font4'><%= a.description %></h5>
+										<a href='<%= a.URL %>' class='font4'>Find out More!</a>
 										<hr>
 
 										<div class='row'>
 											<div class='col-xs-7 col-sm-6 col-md-6'>
-												<p><strong>Gift Price:</strong> <%= a.price %></p>
-												<p><strong>No. of Votes:</strong> <%= a.votes.count %></p>
+												<p class='font4'><strong>Gift Price:</strong> <%= a.price %></p>
+												<p class='font4'><strong>No. of Votes:</strong> <%= a.votes.count %></p>
 											</div>
 											<div class='col-xs-5 col-sm-6 col-md-6'>				
-												<%= button_to 'Up Vote!', votes_create_path(:vote => { :gift_id => a.id, :user_id => current_user.id}), class: "btn btn-default", :method => :post %>
+												<%= button_to 'Up Vote!', votes_create_path(:vote => { :gift_id => a.id, :user_id => current_user.id}), class: "font4 btn btn-default", :method => :post %>
 											</div>
 										</div>
 

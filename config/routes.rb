@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   get '/groups/:id/payments', to: 'payments#new', as: 'new_payment'
 
-  post 'payments/create', to: 'payments#create'
+  post '/payments/create', to: 'payments#create'
 
 
 end
