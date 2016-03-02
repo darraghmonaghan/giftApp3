@@ -3,7 +3,7 @@
 @import "bootstrap";
 
 
-// Font styles
+/////////////////////////////////////////// Font styles
 
 .font1 {
 	font-family: 'Quicksand', sans-serif;
@@ -24,7 +24,7 @@
 
 
 
-// Color styles
+///////////////////////////////////////////// Color styles
 
 .darkGray {
 	color: #252839;
@@ -44,7 +44,7 @@
 
 
 
-// highlight featuring
+//////////////////////////////////////////////// highlight featuring
 
 .highlight {
 	color: #f2b632;	
@@ -62,21 +62,62 @@ hr {
 	border-radius: 0 0 0 0;
 }
 
-.list-group-item {
-	border-radius: 0 0 0 0;
-}
 
 
+///////////////////////////////////////////////////   Navbar
 
-// navbar
 .navbar {
 	background-color: rgba(0,0,0,0);
 	border-color: rgba(0,0,0,0);
 }
 
+.navBtn {
+	margin: 15px 15px 0 0;
+}
+
 ul.nav li:hover {
 	background-color: #f2b632;
 }
+
+.navBtn {
+	margin: 15px 15px 0 0;
+}
+
+.navbar-fixed-bottom {
+    margin-bottom: 0px;
+    background-image: image-url('background.jpg');
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+///////////////////////////////////////////////////   Buttons
+
+.btn {
+	background-color: #f2b632;
+	border-color: #f2b632;
+	color: white;
+	border-radius: 0 0 0 0;
+}
+
+.btn:hover {
+	background-color: white;
+	border-color: #f2b632;
+	color: #f2b632;
+}
+
+
+///////////////////////////////////////////////////   Forms
+
+.form-control {
+	border-radius: 0 0 0 0;
+}
+
+
+
 
 
 
@@ -116,9 +157,7 @@ ul.nav li:hover {
 
 
 
-.navBtn {
-	margin: 15px 15px 0 0;
-}
+
 
 
 .homeBtn {
@@ -140,13 +179,6 @@ ul.nav li:hover {
 
 
 
-.navbar-fixed-bottom {
-    margin-bottom: 0px;
-    background-image: image-url('background.jpg');
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 
 
@@ -169,17 +201,6 @@ ul.nav li:hover {
 
 
 
-.pageBtn {
-	border-color: #252839;
-	background: #252839;
-	color: white;	
-}
-
-.pageBtn:hover {
-	background: #f2b632;
-	border-color: #f2b632;
-	color: white;
-}
 
 
 

@@ -37,8 +37,8 @@
 
 						<% @group_owner_objects.each do | m | %>	
 								<a href='/groups/<%= m.id %>' class='list-group-item'>
-										<div class='font2 darkGray'><strong><%= m.title %></strong>
-										<p class='font3 midGray pull-right'><i><%= m.date.strftime('%v') %></i></p></div>
+										<div class='font2 midGray'><strong><%= m.title %></strong>
+										<p class='font3 lightGray pull-right'><i><%= m.date.strftime('%v') %></i></p></div>
 								</a>
 						<% end %>
 
@@ -64,3 +64,6 @@
 
 	</div>  <!-- row -->
 </div>  <!-- container -->
+
+
+<%= render "partials/footer" %>
