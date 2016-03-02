@@ -3,6 +3,82 @@
 @import "bootstrap";
 
 
+// Font styles
+
+.font1 {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+}
+
+
+.font2 {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: normal;
+}
+
+
+.font3 {
+	font-family: 'Quicksand', sans-serif;
+	font-weight: light;
+}
+
+
+
+// Color styles
+
+.darkGray {
+	color: #252839;
+}
+
+.midGray {
+	color: #677077;
+}
+
+.lightGray {
+	color: #b5b5b7;
+}
+
+.yellow {
+	color: #f2b632;
+}
+
+
+
+// highlight featuring
+
+.highlight {
+	color: #f2b632;	
+}
+
+
+hr {
+    height: 1px;
+    border-top: 1px solid;
+    margin: 1em 0;
+}
+
+
+.panel {
+	border-radius: 0 0 0 0;
+}
+
+
+
+// navbar
+
+ul.nav li:hover {
+	font-color: #f2b632; 
+	text-decoration: underline;
+	text-decoration-color: #f2b632;
+}
+
+
+
+
+
+
+
+
 
 .jumbotron {
     margin-bottom: 0px;
@@ -76,27 +152,7 @@
 
 
 
-.font1 {
-	font-family: 'Open Sans Condensed', sans-serif;
-	color: #89bdd3;
-	font-weight: bold;
-}
 
-
-.font2 {
-	font-family: 'Courgette', cursive;
-	font-weight: bold;
-	color: #89bdd3;
-}
-
-.font3 {
-	font-family: 'Lobster Two', cursive;
-}
-
-
-.font4 {
-	font-family: 'Droid Sans', sans-serif;
-}
 
 .newsfeed1 {
 	color: #89bdd3;
@@ -112,21 +168,17 @@
 
 
 .pageBtn {
-	border-color: #89bdd3;
-	background: #89bdd3;
+	border-color: #252839;
+	background: #252839;
 	color: white;	
 }
 
 .pageBtn:hover {
 	background: white;
-	border-color: #89bdd3;
-	color: #89bdd3;
+	border-color: #f2b632;
+	color: #f2b632;
 }
 
 
-hr {
-    height: 1px;
-    border-top: 1px solid #89bdd3;
-    margin: 1em 0;
-}
+
 
