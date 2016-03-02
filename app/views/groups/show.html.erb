@@ -31,7 +31,7 @@
 	<div class='row'>
 		<div class='col-sm-12 col-md-12 col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4 class='font1 darkGray'>Group Newsfeed:</h4></div>
+				<div class='panel-heading'><h4 class='font1 darkGray'>Group Newsfeed<span class='highlight'>:</span></h4></div>
 					<div class='panel-body'>
 
 						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
@@ -75,7 +75,7 @@
 		<!-- MEMBERS LIST -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count: <%= @members.count %></h4></div>
+				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count<span class='highlight'>:</span> <%= @members.count %></h4></div>
 
 					<ul>
 						<% @group.users.each do | a | %>
@@ -90,7 +90,7 @@
 		<!-- GIFT IDEAS -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 				<div class='panel panel-default'>
-					<div class='panel-heading'><h4 class='font1 darkGray'>Gift Ideas:</h4></div>
+					<div class='panel-heading'><h4 class='font1 darkGray'>Gift Ideas<span class='highlight'>:</span></h4></div>
 
 						<% @group.gifts.each do |a| %>
 							<div class='panel-body'>
