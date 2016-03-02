@@ -62,16 +62,21 @@ hr {
 	border-radius: 0 0 0 0;
 }
 
+.list-group-item {
+	border-radius: 0 0 0 0;
+}
+
 
 
 // navbar
-
-ul.nav li:hover {
-	font-color: #f2b632; 
-	text-decoration: underline;
-	text-decoration-color: #f2b632;
+.navbar {
+	background-color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
 }
 
+ul.nav li:hover {
+	background-color: #f2b632;
+}
 
 
 
@@ -109,10 +114,7 @@ ul.nav li:hover {
 }
 
 
-.navbar {
-	background-color: rgba(0,0,0,0);
-	border-color: rgba(0,0,0,0);
-}
+
 
 .navBtn {
 	margin: 15px 15px 0 0;
@@ -174,9 +176,9 @@ ul.nav li:hover {
 }
 
 .pageBtn:hover {
-	background: white;
+	background: #f2b632;
 	border-color: #f2b632;
-	color: #f2b632;
+	color: white;
 }
 
 

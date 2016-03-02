@@ -19,20 +19,20 @@
 	      <ul class="nav navbar-nav">
 	      	
 
-	      			<li><%= link_to "Home", "/", class: "font2 drakGray nav-text" %></li>
+	      			<li><%= link_to "Home", "/", class: "font2 nav-text" %></li>
 	      	  	
 				<% if user_signed_in? %>
 
-			      	<li><%= link_to "Profile Page", dashboard_index_path, class: "font2 darkGray nav-text" %></li>
-			      	<li><%= link_to "Create a Group", groups_new_path, class: "font2 darkGray nav-text" %></li>
-			      	<li><%= link_to "Invite Members", invites_new_path, class: "font2 darkGray nav-text" %></li>
-			      	<li><%= link_to "Propose A Gift", gifts_new_path, class: "font2 darkGray nav-text" %></li>
-			      	<li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "font2 darkGray nav-text" %></li>
+			      	<li><%= link_to "Profile Page", dashboard_index_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "Create a Group", groups_new_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "Invite Members", invites_new_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "Propose A Gift", gifts_new_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "font2 nav-text" %></li>
 
 				<% else %>
 
-					<li><%= link_to 'Sign Up', new_user_registration_path, class: "font2 darkGray nav-text" %></li>
-					<li><%= link_to 'Sign In', new_user_session_path, class: "font2 darkGray nav-text" %></li>
+					<li><%= link_to 'Sign Up', new_user_registration_path, class: "font2 nav-text" %></li>
+					<li><%= link_to 'Sign In', new_user_session_path, class: "font2 nav-text" %></li>
 				<% end %>
 
 	      </ul>
