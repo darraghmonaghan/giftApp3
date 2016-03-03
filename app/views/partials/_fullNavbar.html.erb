@@ -16,14 +16,11 @@
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	      	
-
-	      			<li><%= link_to "Home", "/", class: "font2 nav-text" %></li>
-	      	  	
+	      <ul class="nav navbar-nav pull-right">
+	      		      	  	
 				<% if user_signed_in? %>
 
-			      	<li><%= link_to "Profile Page", dashboard_index_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "My Profile", dashboard_index_path, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Create a Group", groups_new_path, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Invite Members", invites_new_path, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Propose A Gift", gifts_new_path, class: "font2 nav-text" %></li>
