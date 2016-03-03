@@ -42,6 +42,9 @@
 	color: #f2b632;
 }
 
+.white {
+	color: white;
+}
 
 
 //////////////////////////////////////////////// highlight featuring
@@ -50,13 +53,11 @@
 	color: #f2b632;	
 }
 
-
 hr {
     height: 1px;
     border-top: 1px solid;
     margin: 1em 0;
 }
-
 
 .panel {
 	border-radius: 0 0 0 0;
@@ -79,17 +80,15 @@ ul.nav li:hover {
 	background-color: #f2b632;
 }
 
-.navBtn {
-	margin: 15px 15px 0 0;
-}
-
 .navbar-fixed-bottom {
     margin-bottom: 0px;
-    background-image: image-url('background.jpg');
+    background-image: image-url('orangeBackground.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
 
 
 
@@ -116,6 +115,14 @@ ul.nav li:hover {
 	border-radius: 0 0 0 0;
 }
 
+#commentForm {
+	border-radius: 6% 0 0 6%;
+}
+
+
+#postBtn {
+	border-radius: 0 9% 9% 0;
+}
 
 
 
@@ -123,16 +130,51 @@ ul.nav li:hover {
 
 
 
-
-
+///////////////////////////////////////////////////   Jumbotron
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('background.jpg');
+    background-image: image-url('orangeBackground.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.homeBtn {
+	background-color: rgba(0,0,0,0);
+	border: solid 2px white;
+	color: white;
+}
+
+.homeBtn:hover {
+	background-color: white;
+	border: solid 2px white;
+	color: #f2b632;
+}
+
+
+///////////////////////////////////////////////////   home 1 Div
+
+#home1 {
+    background-image: image-url('lightbulb.png');
+}
+
+.homeImg {
+   background-size: 100%;
+   height: 300px;
+   max-height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .jumbotext1 {
 	color: #252839;
@@ -159,22 +201,6 @@ ul.nav li:hover {
 
 
 
-
-.homeBtn {
-	background-color: #5e0231;
-	border-color: #5e0231;
-	color: white;
-	font-family: 'Courgette', cursive;
-	font-weight: bold;
-}
-
-.homeBtn:hover {
-	background-color: white;
-	border-color: #5e0231;
-	color: #5e0231;
-	font-family: 'Courgette', cursive;
-	font-weight: bold;
-}
 
 
 
