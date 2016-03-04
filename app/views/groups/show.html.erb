@@ -99,7 +99,7 @@
 										<%= image_tag a.avatar.url(:thumb) %>
 									</div>
 									<div class='col-xs-8 col-sm-8 col-md-9'>
-										<h4 class='font1'><%= a.title %></h4>
+										<h4 class='font1'><a href='/groups/<%= @group.id %>/gifts/<%= a.id %>'><%= a.title %></a></h4>
 										<h5 class='font2'><%= a.description %></h5>
 										<a href='<%= a.URL %>' class='font3'>Find out More!</a>
 										<hr class='highlight'>
