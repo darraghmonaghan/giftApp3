@@ -117,6 +117,35 @@ ul.nav li:hover {
 	color: #f2b632;
 }
 
+#deleteGroup {
+	background-color: #e62739;
+	border-color: #e62739;
+	color: white;
+	border-radius: 0 0 0 0;	
+}
+
+#deleteGroup:hover {
+	background-color: white;
+	border-color: #e62739;
+	color: #e62739;
+	border-radius: 0 0 0 0;	
+}
+
+#updateGroup {
+	background-color: #3fb0ac;
+	border-color: #3fb0ac;
+	color: white;
+	border-radius: 0 0 0 0;	
+}
+
+#updateGroup:hover {
+	background-color: white;
+	border-color: #3fb0ac;
+	color: #3fb0ac;
+	border-radius: 0 0 0 0;	
+}
+
+
 
 ///////////////////////////////////////////////////   Forms
 
