@@ -41,7 +41,6 @@
 										<p class='font3 lightGray pull-right'><i><%= m.date.strftime('%v') %></i></p></div>
 								</a>
 						<% end %>
-
 			</div>
 		</div>
 
@@ -52,18 +51,16 @@
 
 						<% @groups_involved.each do | b | %>
 								<a href='/groups/<%= b.id %>' class='list-group-item'>
-									<div><strong><%= b.title %></strong></div>
-									<div><i><%= b.date.strftime('%v') %></i></div>
+										<div class='font2 midGray'><strong><%= b.title %></strong>
+										<p class='font3 lightGray pull-right'><i><%= b.date.strftime('%v') %></i></p></div>
 								</a>
 						<% end %>
-
 			</div>
 		</div>
-
 
 
 	</div>  <!-- row -->
 </div>  <!-- container -->
 
 
-<%= render "partials/footer" %>
+<%#= render "partials/footer" %>

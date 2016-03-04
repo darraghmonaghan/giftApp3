@@ -80,8 +80,17 @@ ul.nav li:hover {
 	background-color: #f2b632;
 }
 
+.html.body {
+	height: 100%;
+	padding-bottom: 70px;
+}
+
+
 .navbar-fixed-bottom {
-    margin-bottom: 0px;
+	position: absolute;
+    height: 50px;
+    left: 0;
+    right: 0;
     background-image: image-url('orangeBackground.jpg');
     background-position: 0% 25%;
     background-size: cover;
