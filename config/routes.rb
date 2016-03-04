@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  get '/home', to: 'home#show', as: 'home_path'
+
   ############################
 
   get '/votes/new', to: 'votes#new', as: 'votes_new'

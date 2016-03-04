@@ -3,12 +3,29 @@ class GroupsController < ApplicationController
   end
 
   def show
-  	@group = Group.find(params[:id])
-    @vote = Vote.new
-    @post = Post.new
-    @founder = User.find(@group.user_id)
-    @members = Membership.where(:group_id => @group.id)
+
+    if current_user === nil
+        redirect_to root_path
+    end
+      
+    memberships = []
+    current_user.memberships.each do | a |
+          memberships.push(a.group_id)
+    end
+
+    @group = Group.find(params[:id])
+
+  	if memberships.include? (@group.id)
+          @vote = Vote.new
+          @post = Post.new
+          @founder = User.find(@group.user_id)
+          @members = Membership.where(:group_id => @group.id)
+    else
+          redirect_to dashboard_index_path
+    end
+
   end
+
 
   def new
   	@group = Group.new
