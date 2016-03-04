@@ -27,8 +27,14 @@
 
              <%= f.hidden_field :user_id, :value => current_user.id %>
           
-             <%= f.submit "Update the Group", class: "font2 btn btn-default ghost-button" %>
+          		<div>
+             		<%= f.submit "Update the Group", id: 'updateGroup', class: "font2 btn btn-default ghost-button" %>
+             		<%= button_to "Delete Group", { :action => "destroy", :id => @group.id }, :confirm => "Are you sure?", :method => :delete, id: 'deleteGroup',class: "pull-right font3 darkGray btn btn-default ghost-button" %>
+             	</div>
               <% end %>
+
+
+
 
               
              </div>

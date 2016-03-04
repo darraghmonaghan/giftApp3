@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   post '/groups/create', to: 'groups#create', as: 'create_group'
 
+  delete '/groups/:id', to: 'groups#destroy', as: 'destroy_group'
+
   get '/groups/:id/stripe', to: 'groups#stripe', as: 'group_stripe'
 
   ############################
