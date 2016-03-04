@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   get '/groups/:id', to: 'groups#show', as: 'groups_show'
 
+  get '/groups/:id/edit', to: 'groups#edit', as: 'groups_edit'
+
+  patch '/groups/:id', to: 'groups#update', as: 'groups_update'
+
   get '/dashboard/groups/new', to: 'groups#new', as: 'groups_new'
 
   post '/groups/create', to: 'groups#create', as: 'create_group'

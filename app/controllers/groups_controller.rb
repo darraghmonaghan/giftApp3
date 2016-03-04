@@ -3,7 +3,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-
     if current_user === nil
         redirect_to root_path
     end
@@ -43,6 +42,28 @@ class GroupsController < ApplicationController
         redirect_to root_path
       end
   end
+
+
+  def edit
+    if current_user === nil
+        redirect_to root_path
+    end
+
+    @group = Group.find(params[:id])
+
+    if current_user.id != @group.user_id
+        redirect_to dashboard_index_path
+    end
+  end
+
+
+  def update
+    @group = Group.find(params[:id])
+    if @group.update_attributes(group_params)
+      redirect_to :action => 'show', :id => @group.id
+    end
+  end
+
 
 
   def stripe
