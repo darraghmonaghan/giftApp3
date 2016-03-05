@@ -109,9 +109,11 @@
 												<p class='font2'><strong>Gift Price<span class='highlight'>:</span></strong> <%= a.price %></p>
 												<p class='font2'><strong>No. of Votes<span class='highlight'>:</span></strong> <%= a.votes.count %></p>
 											</div>
-											<div class='col-xs-5 col-sm-6 col-md-6'>				
-												<%= button_to 'Up Vote!', votes_create_path(:vote => { :gift_id => a.id, :user_id => current_user.id}), class: "font3 pageBtn btn btn-default", :method => :post %>
-											</div>
+											<% if @user_votes.exclude? (a.id) %>
+												<div class='col-xs-5 col-sm-6 col-md-6'>				
+													<%= button_to 'Up Vote!', votes_create_path(:vote => { :gift_id => a.id, :user_id => current_user.id}), class: "font3 pageBtn btn btn-default", :method => :post %>
+												</div>
+											<% end %>
 										</div>
 
 									</div>
