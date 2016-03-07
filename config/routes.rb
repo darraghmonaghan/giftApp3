@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   get '/home', to: 'home#show', as: 'home_path'
 
+  get '/contact', to: 'home#contact'
+
+  get '/about', to: 'home#about'
+
+  get '/faq', to: 'home#faq'
+
   ############################
 
   get '/votes/new', to: 'votes#new', as: 'votes_new'
