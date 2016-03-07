@@ -1,6 +1,5 @@
 
 
-
 <%= render "partials/fullNavbar" %>
 
 
@@ -95,13 +94,13 @@
 						<% @group.gifts.each do |a| %>
 							<div class='panel-body'>
 								<div class='row'>
-									<div class='col-xs-4 col-sm-4 col-md-3'>
-										<%= image_tag a.avatar.url(:thumb) %>
+									<div id='giftImgContainer' class='col-xs-4 col-sm-4 col-md-3'>
+										<div id='giftImgDiv'><%= image_tag a.avatar.url(:thumb) %></div>
 									</div>
 									<div class='col-xs-8 col-sm-8 col-md-9'>
 										<h4 class='font1'><a href='/groups/<%= @group.id %>/gifts/<%= a.id %>'><%= a.title %></a></h4>
 										<h5 class='font2'><%= a.description %></h5>
-										<a href='<%= a.URL %>' class='font3'>Find out More!</a>
+<!-- 										<a href='<%= a.URL %>' class='font3'>Find out More!</a> -->
 										<hr class='highlight'>
 
 										<div class='row'>

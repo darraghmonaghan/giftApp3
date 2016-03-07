@@ -97,6 +97,9 @@ ul.nav li:hover {
     background-repeat: no-repeat;
 }
 
+.breadcrumb {
+	background-color: white;
+}
 
 
 
@@ -191,17 +194,21 @@ ul.nav li:hover {
 }
 
 
-///////////////////////////////////////////////////   home 1 Div
+///////////////////////////////////////////////////   group show - Gift Image
 
-#home1 {
-    background-image: image-url('lightbulb.png');
+#giftImgContainer {
+	position: relative;
 }
 
-.homeImg {
-   background-size: 100%;
-   height: 300px;
-   max-height: 400px;
+#giftImgDiv {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-top: 25px;
+   margin-left: -25px;
 }
+
+
 
 
 

@@ -1,1 +1,34 @@
-<h1>Show Gift Page here</h1>
+
+<%= render "partials/fullNavbar" %>
+
+<ol class="font2 lightGray breadcrumb">
+  <li></li>
+  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+  <li class="active"><%= @gift.title %></li>
+</ol>
+
+<div class='container'>
+	
+	<div class='subheader row'>
+		<div class='col-sm-12 col-md-12 col-lg-12'>
+			<h1 class='font1 darkGray text-center'><%= @gift.title %></h1>
+			<h3 class='font2 midGray text-center'><%= @gift.description %></h3>
+
+			<div class='row'>
+				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
+					<h4 class='font3 lightGray'><span class='highlight'>Price:</span> <%= @gift.price %></h4>
+				</div>
+				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
+					<h4><a href='<%= @gift.URL %>' class='font3 highlight'>Find out More!</a></h4>
+				</div>
+			</div><br>
+
+
+				<div class='col-xs-12 col-sm-12 col-md-12'>
+					<%= image_tag @gift.avatar.url(:medium) %>
+				</div>
+
+		</div>
+	</div>
+
+</div>
