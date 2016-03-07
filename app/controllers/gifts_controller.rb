@@ -14,6 +14,7 @@ class GiftsController < ApplicationController
 
   def show
     @gift = Gift.find(params[:id])
+    @group = Group.find(params[:group_id])
   end
 
 

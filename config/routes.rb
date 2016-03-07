@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  get '/home', to: 'home#show', as: 'home_path'
+  get '/home', to: 'home#show', as: 'home'
+
+  get '/contact', to: 'home#contact'
+
+  get '/about', to: 'home#about'
+
+  get '/faq', to: 'home#faq'
 
   ############################
 

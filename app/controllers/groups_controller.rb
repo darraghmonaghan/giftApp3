@@ -12,6 +12,12 @@ class GroupsController < ApplicationController
           memberships.push(a.group_id)
     end
 
+    @user_votes = []
+    current_user.votes.each do | b |
+          @user_votes.push(b.gift_id)
+    end
+
+
     @group = Group.find(params[:id])
 
   	if memberships.include? (@group.id)
