@@ -17,7 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 					  if @token != nil
 					     group =  Invite.find_by_token(@token).group #find the organization attached to the invite
 					     @newUser.groups.push(group) #add this user to the new organization as a member
-					     redirect_to about_path
 					  end
 		end
 	end
