@@ -34,12 +34,12 @@ class InvitesController < ApplicationController
 			   
 			   if invite.save
 			  
-			   	  	if invite.recipient != nil									             # If the person inviting is already signed up
+			   	  	if invite.recipient != nil									             # If the person inviting is already signed up / EXISTING USER
 				   	  	InviteMailer.invite_existing_user(invite).deliver_now	 # Version 1 of email sent
-						invite.recipient.groups.push(invite.group)			           # Updating the membership list of the existing user - add the group in question
+						    invite.recipient.groups.push(invite.group)			       # Updating the membership list of the existing user - add the group in question
 
-				  	else
-					    InviteMailer.group_invite(invite, new_user_registration_path(:invite_token => invite.token)).deliver_now #send the invite data to our mailer to deliver the email
+				  else
+					    InviteMailer.group_invite(invite, new_user_registration_path(:invite_token => invite.token)).deliver_now # send the invite data to our mailer to deliver the email
 					end
 			   # else
 			      # REDIRECT ???
