@@ -77,7 +77,7 @@
 				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count<span class='highlight'>:</span> <%= @members.count %></h4></div>
 
 					<ul>
-						<% @group.users.each do | a | %>
+						<% @group.memberships.each do | a | %>
 							<li class='font2 midGray'><%= a.firstname %> <%= a.surname %></li>
 						<% end %>
 					</ul>	
