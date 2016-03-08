@@ -16,8 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 					  if @token != nil
 					     @group = Invite.find_by_token(@token).group #find the organization attached to the invite
-					     @newUser.memberships.push(@group) #add this user to the new organization as a member
-					     # Membership.create(:user_id => @newUser.id, :group_id => @group.id)
+					     # @newUser.memberships.push(@group) #add this user to the new organization as a member
+					     Membership.create(:user_id => @newUser.id, :group_id => @group.id)
 					  end
 			end
 	end
