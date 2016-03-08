@@ -1,6 +1,6 @@
 class InviteMailer < ApplicationMailer
 
-	default from: 'noreply@ourgift.com'
+	default from: 'noreply@weshallgift.com'
 
 	def group_invite(invite, url)
 		@invite = invite
