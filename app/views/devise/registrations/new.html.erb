@@ -42,6 +42,12 @@
           </div>
       </div>
 
+      <!-- Hidden Field for Invitaiton Token -->
+            <% if @token != nil %>
+                <%= hidden_field_tag :invite_token, @token %>
+            <% end %>
+
+
       <div class="form-group">
           <div class="col-sm-offset-2 col-sm-6">
               <%= f.submit "Sign up", class: "btn btn-primary" %>
