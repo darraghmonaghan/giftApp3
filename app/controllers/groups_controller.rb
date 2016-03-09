@@ -29,6 +29,9 @@ class GroupsController < ApplicationController
           redirect_to dashboard_index_path
     end
 
+    @members = []
+
+
   end
 
 

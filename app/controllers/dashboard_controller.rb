@@ -32,10 +32,6 @@ class DashboardController < ApplicationController
       		end
       	end
 
-
-      	puts 'involved groups here....'
-      	puts @groups_involved
-
 	end
 
 

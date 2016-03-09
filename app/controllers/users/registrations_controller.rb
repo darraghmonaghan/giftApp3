@@ -9,23 +9,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
 	def create
-		super do
-			  @newUser = User.create(resource_params)
-			  @newUser.save
-			  @token = params[:invite_token]
 
-					  if @token != nil
-					     group =  Invite.find_by_token(@token).group #find the organization attached to the invite
-					     @newUser.groups.push(group) #add this user to the new organization as a member
-					  end
-		end
+	    super do |user|
+	      token = params[:invite_token]
+
+		      if token.present?
+		        invite = Invite.find_by_token(token)
+
+			        if invite.present?
+			          Membership.create(user_id: user.id, group_id: invite.group.id)
+			        end
+		      end
+	    end
 	end
-
 
 
 	private :resource_params
 		def resource_params
-		    params.require(:user).permit(:email, :password, :password_confirmation, :current_password)
+		    params.require(:user).permit(:email, :firstname, :surname, :password, :password_confirmation, :current_password)
 		end
 
 
