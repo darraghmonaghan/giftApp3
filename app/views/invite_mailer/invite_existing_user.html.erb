@@ -16,8 +16,8 @@
   </head>
 
   <body>
-        <h1>Hi There,</h1>
-            <h5>A new group gift is being planned, get involved in the process!</h5>
+        <h1>Hi <%= @invitee.firstname %>,</h1>
+            <h5><%= @inviter.firstname %> <%= @inviter.surname %> is arranging a group gift for <%= @group.title %>, and they want you to be involved!</h5><br>
 
             <h5><a href='hidden-hamlet-51741.herokuapp.com/sign_in'>See the top gift ideas so far!</a></h5>
 
