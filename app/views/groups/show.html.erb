@@ -53,9 +53,9 @@
 					            <%= f.hidden_field :user_id, :value => current_user.id %>
 
 								<div class="input-group">
-									<%= f.text_field :content, placeholder: 'What would you like to say?', id: 'commentForm', class: "font2 form-control", required: true %>
+									<%= f.text_field :content, placeholder: 'What would you like to say?', class: "font2 form-control", required: true %>
 								   	<span class="input-group-btn">
-								        <%= f.submit "Post Comment!", id: 'postBtn', class: "font2 btn btn-default ghost-button pull-right" %>
+								        <%= f.submit "Post Comment!", class: "font2 btn btn-default ghost-button pull-right" %>
 								   	</span>
 								</div>
 
@@ -74,7 +74,7 @@
 		<!-- MEMBERS LIST -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count<span class='highlight'>:</span> <%= @members.count %></h4></div>
+				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count<span class='highlight'>:</span> <%= @group.users.count %></h4></div>
 
 					<ul>
 						<% @group.users.each do | a | %>
