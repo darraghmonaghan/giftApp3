@@ -7,7 +7,33 @@
 	<h1 class='font2 darkGray'>Contact Us<span class='highlight'>.</span></h1>
 	<hr class='highlight'>
 
-		<h4 class='font3 midGray'>We are contstantly trying to improve the service that we offer, should there be feedback or suggestions as to how we can improve, we would love to hear from you!</h4><br>
+		<h4 class='font3 midGray'>We are contstantly trying to improve the service that we offer, should there be feedback or suggestions as to how we can improve, we would love to hear from you!</h4><br><br>
+
+
+	        <div class="form-container">
+
+				<%= form_for :message, :url => send_message_path do |f| %>
+
+
+						    <div class="form-group">
+						    	<%= f.text_field :name, placeholder: 'Your Name', class: "font3 form-control", required: true %>
+						    </div>
+						    <div class="form-group">
+						    	<%= f.text_field :email, placeholder: 'Your Email Address', class: "font3 form-control", required: true %>
+						    </div>
+						    <div class="form-group">
+						    	<%= f.text_field :topic, placeholder: 'Topic of Conversation', class: "font3 form-control", required: true %>
+						    </div>
+						    <div class="form-group">
+						    	<%= f.text_area :content, placeholder: 'Please let us know how we can help!', class: "font3 form-control", required: true, size: '30x10' %>
+						    </div>
+
+						    <%= f.submit 'Send Message', class: "font3 btn btn-default ghost-button" %>
+						
+				<% end %>	        
+
+	        </div>
+
 
 </div>
 

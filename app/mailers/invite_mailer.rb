@@ -22,4 +22,17 @@ class InviteMailer < ApplicationMailer
 		mail(to: @invite.email, subject: subject_title)
 	end
 
+
+	def contact_message(sender_name, sender_email, topic, content)
+		@from = sender_name
+		@from_email = sender_email
+		@topic = topic
+		@content = content
+
+		send_to = 'monaghan.darragh@gmail.com'
+		subject = 'Contact Message via WeShallGift site'
+
+		mail(to: send_to, subject: subject)
+	end
+
 end
