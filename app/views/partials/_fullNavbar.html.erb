@@ -22,13 +22,14 @@
 
 			      	<li><%= link_to "My Profile", dashboard_index_path, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Create a Group", stripe_connect_path, class: "font2 nav-text" %></li>
-			      	<li><%= link_to "Invite Members", invites_new_path, class: "font2 nav-text" %></li>
+			      	<!-- <li><%#= link_to "Invite Members", invites_new_path, class: "font2 nav-text" %></li> -->
 				
 					<% if current_user.id === @group.user_id %>
 			      			<li><%= link_to "Edit Group", groups_edit_path, class: "font2 nav-text" %></li>
 					<% end %>					
 
-			      	<li><%= link_to "Propose A Gift", gifts_new_path, class: "font2 nav-text" %></li>
+			      	<!-- <li><%#= link_to "Propose A Gift", gifts_new_path, class: "font2 nav-text" %></li> -->
+			      	<li><%= link_to "Donte to Gift", new_payment_path, method: :get, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "font2 nav-text" %></li>
 
 				<% else %>
