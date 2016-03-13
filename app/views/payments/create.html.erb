@@ -1,5 +1,16 @@
-<h1>Payments#create</h1>
-<p>Find me in app/views/payments/create.html.erb</p>
+
+<%= render "partials/navbar" %>
+
+<ol class="font2 lightGray breadcrumb">
+	  <li></li>
+	  <li><a href="/dashboard">Profile Page</a></li>	  
+	  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+</ol>
+
+<div class='container'>
+	
+
+		<h2 class='font2 midGray'>Thanks, <%= current_user.firstname %>, you donated <span class='highlight'>£10.00</span> to a gift for <%= @group.title %></h2>
 
 
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+</div>
