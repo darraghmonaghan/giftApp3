@@ -10,14 +10,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: $20.00</span>
     </label>
   </article>
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= @owner_publishable_key %>"
           data-description="<%= @group.title %>"
-          data-amount="500"
+          data-amount="2000"
           data-locale="auto">
     </script>
 
