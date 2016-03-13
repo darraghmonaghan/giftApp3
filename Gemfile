@@ -33,6 +33,8 @@ gem "figaro"
 
 gem 'omniauth-stripe-connect'
 
+gem 'stripe'
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
