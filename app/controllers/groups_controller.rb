@@ -6,15 +6,13 @@ class GroupsController < ApplicationController
 
 
   def stripe
-    puts 'CURRENT USER HERE!!!'
-    puts current_user
-    # if current_user.publishable_key === nil
-    #     puts 'CURRENT USER HERE!!!'
-    #     puts current_user
-    #     render 'stripe'
-    # else
+    @user = current_user
+
+    if @user.publishable_key === nil
+         render 'stripe'
+    else
         redirect_to groups_new_path
-    # end
+    end
   end
 
 
@@ -96,11 +94,6 @@ class GroupsController < ApplicationController
     @group.destroy
     redirect_to dashboard_index_path
   end
-
-
-  def stripe
-  end
-
 
 
 private
