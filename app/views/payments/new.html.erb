@@ -1,24 +1,51 @@
-<h1>Payments#new</h1>
-<p>Find me in app/views/payments/new.html.erb</p>
+
+<%= render "partials/navbar" %>
 
 
-<%= form_tag payments_create_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: £10.00</span>
-    </label>
-  </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= @owner_publishable_key %>"
-          data-description="<%= @group.title %>"
-          data-amount="2000"
-          data-locale="auto">
-    </script>
+<ol class="font2 lightGray breadcrumb">
+    <li></li>
+    <li><a href="/dashboard">Profile Page</a></li>    
+    <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+</ol>
 
-<% end %>
+
+
+<div class='container'>
+  <div class='row'>
+      <div class='text-center'>
+
+      <h3 class='font2 midGray'>Click the button below to make a donation to <%= @group.title %></h3><br>
+
+      <hr class='highlight'>
+      <br>
+
+        <%= form_tag payments_create_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span>Donate £10.00</span>
+            </label>
+          </article>
+
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= @owner_publishable_key %>"
+                  data-description="<%= @group.title %>"
+                  data-amount="2000"
+                  data-locale="auto">
+            </script>
+
+        <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
