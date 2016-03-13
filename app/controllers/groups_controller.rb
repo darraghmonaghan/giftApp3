@@ -1,6 +1,23 @@
 class GroupsController < ApplicationController
+
+
   def index
   end
+
+
+  def stripe
+    puts 'CURRENT USER HERE!!!'
+    puts current_user
+    # if current_user.publishable_key === nil
+    #     puts 'CURRENT USER HERE!!!'
+    #     puts current_user
+    #     render 'stripe'
+    # else
+        redirect_to groups_new_path
+    # end
+  end
+
+
 
   def show
     if current_user === nil

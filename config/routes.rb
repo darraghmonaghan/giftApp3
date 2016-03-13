@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   delete '/groups/:id', to: 'groups#destroy', as: 'destroy_group'
 
-  get '/groups/:id/stripe', to: 'groups#stripe', as: 'group_stripe'
+  # get '/groups/:id/stripe', to: 'groups#stripe', as: 'group_stripe'
 
   ############################
 
@@ -65,6 +65,10 @@ Rails.application.routes.draw do
   get '/groups/:id/payments', to: 'payments#new', as: 'new_payment'
 
   post '/payments/create', to: 'payments#create'
+
+  #############################
+
+  get '/stripeconnect', to: 'groups#stripe', as: 'stripe_connect'
 
 
 end

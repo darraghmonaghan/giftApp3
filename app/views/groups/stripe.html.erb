@@ -1,9 +1,20 @@
 
 <%= render "partials/navbar" %>
 
+<div class='container'>
+	<div class='row'> 
+		<div class='col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3'>
 
-<h1>Stripe Sign in??</h1><br><br>
+			<h1 class='font3 midGray text-center'>Connect Your Stripe Account</h1><br>
 
-    <div>
-       <%= link_to image_tag('/assets/images/blue-on-light.png'), user_omniauth_authorize_path(:stripe_connect) %>
-    </div>  
+				<h4 class='font2 darkGray text-center'>Connecting to Stripe will take care of the financials, allowing your friends to easily transfer you funds for the gift</h4><br>
+
+				<hr class='highlight'><br>
+
+			    <div class='text-center'>
+			       <%= link_to image_tag('blue-on-light.png'), user_omniauth_authorize_path(:stripe_connect) %>
+			    </div>  
+
+		</div>
+	</div>
+</div>

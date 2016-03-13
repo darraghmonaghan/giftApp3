@@ -21,7 +21,7 @@
 				<% if user_signed_in? %>
 
 			      	<li><%= link_to "My Profile", dashboard_index_path, class: "font2 nav-text" %></li>
-			      	<li><%= link_to "Create a Group", groups_new_path, class: "font2 nav-text" %></li>
+			      	<li><%= link_to "Create a Group", stripe_connect_path, class: "font2 nav-text" %></li>
 			      	<li><%= link_to "Invite Members", invites_new_path, class: "font2 nav-text" %></li>
 				
 					<% if current_user.id === @group.user_id %>
