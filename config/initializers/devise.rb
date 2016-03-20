@@ -14,8 +14,6 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-  config.secret_key = '<%= ENV["SECRET_KEY_BASE"] %>' if Rails.env == 'production'
-
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -243,7 +241,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :stripe_connect,
-        ENV['STRIPE_CONNECT_CLIENT_ID'],
+        ENV['CLIENT_ID'],
         ENV['STRIPE_SECRET_KEY'],
         :scope => 'read_write',
         :stripe_landing => 'register'
