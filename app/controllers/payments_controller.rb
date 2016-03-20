@@ -8,17 +8,15 @@ class PaymentsController < ApplicationController
 		group_owner_id = @group.user_id
 		group_owner = User.find(group_owner_id)
 		@owner_publishable_key = group_owner.publishable_key
-		puts 'OWNER publishable_key HERE!!!'
-		puts @owner_publishable_key
 	end
 
 	def create
 		  @group = Group.find(params[:id])
 		  
-
-
-		  # Amount in cents
+		  # Amount in Pence
 		  @amount = 1000
+		  # Amount in Sterling
+		  @amount2 = (@amount / 100)
 
 		  customer = Stripe::Customer.create(
 		    :email => params[:stripeEmail],
@@ -31,6 +29,15 @@ class PaymentsController < ApplicationController
 		    :description => 'Rails Stripe customer',
 		    :currency    => 'gbp'
 		  )
+
+		@group = Group.find(params[:id])
+			if @group.current === nil
+				new_amount = @amount2
+			else
+				new_amount = (@group.current += @amount2)				
+			end
+		@group.current = new_amount
+		@group.save
 
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message
