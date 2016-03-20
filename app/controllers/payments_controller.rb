@@ -13,9 +13,9 @@ class PaymentsController < ApplicationController
 	def create
 		  @group = Group.find(params[:id])
 		  
-		  # Amount in Pence
+		  # Amount in Pence - required for Stripe payments
 		  @amount = 1000
-		  # Amount in Sterling
+		  # Amount in Sterling - required for Group Update
 		  @amount2 = (@amount / 100)
 
 		  customer = Stripe::Customer.create(

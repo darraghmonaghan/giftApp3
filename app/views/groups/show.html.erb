@@ -25,10 +25,10 @@
 
 			<div class='row'>
 				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
-					<h4 class='font3 lightGray'><span class='highlight'>Donation Target:</span> <%= @group.target %></h4>
+					<h4 class='font3 lightGray'><span class='highlight'>Donation Target:</span> £<%= @group.target %></h4>
 				</div>
 				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
-					<h4 class='font3 lightGray'><span class='highlight'>Current Amount:</span> <%= @group.current %></h4>
+					<h4 class='font3 lightGray'><span class='highlight'>Current Amount:</span> £<%= @group.current %></h4>
 				</div>
 			</div>
  
@@ -86,7 +86,7 @@
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
 				<div class='panel-heading'>
-					<h4 class='font2 darkGray'>Member Count<span class='highlight'>:</span> <%= @group.users.count %><span class='pull-right'><%= link_to "Invite Members", invites_new_path, class: "font2" %></span></h4></div>
+					<h4 class='font2 darkGray'>Member Count<span class='highlight'>:</span> <%= @group.users.count %><span><h5 class='pull-right'><%= link_to "Invite Members", invites_new_path, class: "font2" %><h5></span></h4></div>
 
 
 					<ul>
@@ -103,7 +103,7 @@
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 				<div class='panel panel-default'>
 					<div class='panel-heading'>
-						<h4 class='font2 darkGray'>Gift Ideas<span class='highlight'>:</span><span class='pull-right'><%= link_to "Propose A Gift", gifts_new_path, class: "font2" %></span></h4></div>
+						<h4 class='font2 darkGray'>Gift Ideas<span class='highlight'>:</span><span><h5 class='pull-right'><%= link_to "Propose A Gift", gifts_new_path, class: "font2" %></h5></span></h4></div>
 					
 
 
