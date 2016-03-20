@@ -1,43 +1,48 @@
 class PaymentsController < ApplicationController
 
-  
-  protect_from_forgery with: :null_session
+	skip_before_filter  :verify_authenticity_token
 
 
-  def new
-  end
+	def new
+		@group = Group.find(params[:id])
+		group_owner_id = @group.user_id
+		group_owner = User.find(group_owner_id)
+		@owner_publishable_key = group_owner.publishable_key
+	end
 
-  def create
-  	puts 'params here:'
-  	puts params[:stripeToken]
-  	puts params[:stripeTokenType]
-  	puts params[:stripeEmail]
-  	puts '___________________________'
+	def create
+		  @group = Group.find(params[:id])
+		  
+		  # Amount in Pence - required for Stripe payments
+		  @amount = 1000
+		  # Amount in Sterling - required for Group Update
+		  @amount2 = (@amount / 100)
 
-		# Stripe.api_key = "sk_test_vGMPaW1vKvvvu5KFZzazu4rQ"
-
-		# Get the credit card details submitted by the form
-		token = params[:stripeToken]
-
-		# Create the charge on Stripe's servers - this will charge the user's card
-		begin
-		  charge = Stripe::Charge.create(
-		    :amount => 1000, # amount in cents, again
-		    :currency => "gbp",
-		    :source => token,
-		    :description => "Example charge"
+		  customer = Stripe::Customer.create(
+		    :email => params[:stripeEmail],
+		    :source  => params[:stripeToken]
 		  )
+
+		  charge = Stripe::Charge.create(
+		    :customer    => customer.id,
+		    :amount      => @amount,
+		    :description => 'Rails Stripe customer',
+		    :currency    => 'gbp'
+		  )
+
+		@group = Group.find(params[:id])
+			if @group.current === nil
+				new_amount = @amount2
+			else
+				new_amount = (@group.current += @amount2)				
+			end
+		@group.current = new_amount
+		@group.save
+
 		rescue Stripe::CardError => e
-		  # The card has been declined
+		  flash[:error] = e.message
+		  redirect_to new_charge_path
 		end
 
 
-private
-
-  def payment_params
-    params.require(:stripe).permit(:stripeToken, :stripeTokenType, :stripeEmail)  
-  end
-
-
-  end
 end

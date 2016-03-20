@@ -1,6 +1,21 @@
 class GroupsController < ApplicationController
+
+
   def index
   end
+
+
+  def stripe
+    @user = current_user
+
+    if @user.publishable_key === nil
+         render 'stripe'
+    else
+        redirect_to groups_new_path
+    end
+  end
+
+
 
   def show
     if current_user === nil
@@ -81,15 +96,10 @@ class GroupsController < ApplicationController
   end
 
 
-  def stripe
-  end
-
-
-
 private
 
   def group_params
-    params.require(:group).permit(:title, :description, :date, :time, :user_id)  
+    params.require(:group).permit(:title, :description, :date, :time, :target, :user_id)  
   end
 
 

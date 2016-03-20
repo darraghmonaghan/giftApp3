@@ -26,9 +26,13 @@
               <%= f.time_field :date, placeholder: 'Time of the Event', class: "font3 darkGray form-control", required: true %>
             </div>
 
-             <%= f.hidden_field :user_id, :value => current_user.id %>
+            <div class="form-group">
+              <%= f.number_field :target, placeholder: 'Target Gift Donation Amount', class: "font3 darkGray form-control", required: false %>
+            </div>
+
+              <%= f.hidden_field :user_id, :value => current_user.id %>
           
-             <%= f.submit "Create the Group", class: "font2 btn btn-default ghost-button" %>
+              <%= f.submit "Create the Group", class: "font2 btn btn-default ghost-button" %>
               <% end %>
 
               

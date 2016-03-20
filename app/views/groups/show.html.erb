@@ -23,6 +23,16 @@
 				</div>
 			</div>
 
+			<div class='row'>
+				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
+					<h4 class='font3 lightGray'><span class='highlight'>Donation Target:</span> £<%= @group.target %></h4>
+				</div>
+				<div class='text-center col-xs-12 col-sm-6 col-md-6 col-lg-6'>
+					<h4 class='font3 lightGray'><span class='highlight'>Current Amount:</span> £<%= @group.current %></h4>
+				</div>
+			</div>
+ 
+
 		</div>
 	</div>
 	<hr class='highlight'>
@@ -30,7 +40,8 @@
 	<div class='row'>
 		<div class='col-sm-12 col-md-12 col-lg-12'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4 class='font1 darkGray'>Group Newsfeed<span class='highlight'>:</span></h4></div>
+				<div class='panel-heading'>
+					<h4 class='font2 darkGray'>Group Newsfeed<span class='highlight'>:</span></h4></div>
 					<div class='panel-body'>
 
 						<div class='col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1'>
@@ -74,7 +85,9 @@
 		<!-- MEMBERS LIST -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 			<div class='panel panel-default'>
-				<div class='panel-heading'><h4 class='font1 darkGray'>Member Count<span class='highlight'>:</span> <%= @group.users.count %></h4></div>
+				<div class='panel-heading'>
+					<h4 class='font2 darkGray'>Member Count<span class='highlight'>:</span> <%= @group.users.count %><span><h5 class='pull-right'><%= link_to "Invite Members", invites_new_path, class: "font2" %><h5></span></h4></div>
+
 
 					<ul>
 						<% @group.users.each do | a | %>
@@ -89,7 +102,11 @@
 		<!-- GIFT IDEAS -->
 		<div class='col-sm-12 col-md-6 col-lg-6'>
 				<div class='panel panel-default'>
-					<div class='panel-heading'><h4 class='font1 darkGray'>Gift Ideas<span class='highlight'>:</span></h4></div>
+					<div class='panel-heading'>
+						<h4 class='font2 darkGray'>Gift Ideas<span class='highlight'>:</span><span><h5 class='pull-right'><%= link_to "Propose A Gift", gifts_new_path, class: "font2" %></h5></span></h4></div>
+					
+
+
 
 						<% @group.gifts.each do |a| %>
 							<div class='panel-body'>
@@ -98,7 +115,7 @@
 										<div id='giftImgDiv'><%= image_tag a.avatar.url(:thumb) %></div>
 									</div>
 									<div class='col-xs-8 col-sm-8 col-md-9'>
-										<h4 class='font1'><a href='/groups/<%= @group.id %>/gifts/<%= a.id %>'><%= a.title %></a></h4>
+										<h4 class='font2'><a href='/groups/<%= @group.id %>/gifts/<%= a.id %>'><%= a.title %></a></h4>
 										<h5 class='font2'><%= a.description %></h5>
 <!-- 										<a href='<%= a.URL %>' class='font3'>Find out More!</a> -->
 										<hr class='highlight'>
