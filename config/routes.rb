@@ -72,5 +72,4 @@ Rails.application.routes.draw do
 
   get '/oauth/callback', to: 'OmniauthCallbacks#stripe_connect'
 
-
 end
