@@ -46,6 +46,9 @@
 	color: white;
 }
 
+#Gift {
+	color: #89bdd3;	
+}
 
 //////////////////////////////////////////////// highlight featuring
 
@@ -92,14 +95,11 @@ ul.nav li:hover {
 ///////////////////////////////////////////////////   Footer
 
 .navbar-fixed-bottom {
-	position: absolute;
+	position: fixed;
     height: 50px;
     left: 0;
     right: 0;
     background-image: image-url('orangeBackground.jpg');
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 
