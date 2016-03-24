@@ -185,6 +185,10 @@ ul.nav li:hover {
 
 ///////////////////////////////////////////////////  Homepage - Feature Description
 
+.homepageDescription {
+	border: none;
+}
+
 .featureDescription {
   font-size: 7ch;
   margin-top: 50px;
@@ -193,7 +197,7 @@ ul.nav li:hover {
 
 
 #social {
-  background-image: image-url('friends.jpg');
+  background-image: image-url('group-of-friends.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 220px;
