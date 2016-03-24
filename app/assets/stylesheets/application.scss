@@ -183,6 +183,36 @@ ul.nav li:hover {
 	color: #f2b632;
 }
 
+///////////////////////////////////////////////////  Homepage - Feature Description
+
+.featureDescription {
+  font-size: 7ch;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+#social {
+  background-image: image-url('friends.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 220px;
+}
+
+#ideas {
+  background-image: image-url('idea.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 220px;
+}
+
+#details {
+  background-image: image-url('Jar-of-Money.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 220px;
+}
+
 
 ///////////////////////////////////////////////////   group show - Gift Image
 
@@ -265,9 +295,6 @@ text-align: left;
 	font-weight: bold;
 }
 
-.homeButton {
-	background-color: #5e0231;
-}
 
 .subheader {
 	color: #c9c9c9;
