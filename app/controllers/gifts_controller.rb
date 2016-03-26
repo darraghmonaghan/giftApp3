@@ -31,7 +31,7 @@ class GiftsController < ApplicationController
     params = {
       'SearchIndex' => 'All',
       'Keywords'=> search_phrase,
-      'ResponseGroup' => "ItemAttributes,Images"
+      'ResponseGroup' => "ItemAttributes,Images,OfferSummary"
     }
 
     raw_response = request.item_search(query: params)
@@ -39,11 +39,15 @@ class GiftsController < ApplicationController
 
     @hashed_products['ItemSearchResponse']['Items']['Item'].each do |item|
         product = OpenStruct.new
-        product.name = item['ItemAttributes']['Title']
+        product.Title = item['ItemAttributes']['Title']
         product.image = item['MediumImage']['URL']
-        product.id = item['ItemAttributes']['ASIN']
-        product.url = item['ItemAttributes']['DetailPageURL']
-        product.description = item['ItemAttributes']['Feature']        
+        product.ASIN = item['ASIN']
+        product.URL = item['DetailPageURL']
+        product.purchaseURL = item['purchaseURL']
+        product.Feature = item['ItemAttributes']['Feature']
+        product.Price = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 
+        product.Summar = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 
+
         @products << product
 
     end

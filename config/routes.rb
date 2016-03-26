@@ -59,7 +59,9 @@ Rails.application.routes.draw do
 
   post '/gifts/create', to: 'gifts#create', as: 'gifts_create'
 
-  post '/gifts/search', to: 'gifts#amazonSearch', as: 'gifts_search'
+  post '/groups/:id/gifts', to: 'gifts#amazonSearch', as: 'gifts_search'
+
+  # post '/gifts/search', to: 'gifts#amazonSearch', as: 'gifts_search'
 
   ############################
 
