@@ -6,15 +6,6 @@ class DashboardController < ApplicationController
       	@user = current_user
 	 	groups = []
       	@newsfeed_posts = []
-      	@groups_involved = []
-      	@group_owner_objects = []
-
-
-      	# Preparing groups owner / organiser of
-      	group_owner_objects = Group.where(:user_id => current_user.id)
-      	group_owner_objects.each do | a |
-        	@group_owner_objects.push(a)
-      	end
 
 	    @user.groups.each do | group |
 	        groups.push(group)
@@ -25,14 +16,19 @@ class DashboardController < ApplicationController
 	    end
 
 
-      	# Preparing groups invovled in      
-      	groups.each do | group |
-      		if group.user_id != @user.id
-      			@groups_involved.push(group)
-      		end
-      	end
+      	# Sorting by Event Date
+		@sorted_groups = @user.groups.sort_by do | item |
+			item[:date]
+		end
+      	
+      	puts 'sorted group objects here!!!!!.......!!!!!'
+      	puts @sorted_groups
 
 	end
+
+
+
+
 
 
 	def show
