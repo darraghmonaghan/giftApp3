@@ -1,10 +1,10 @@
 class GiftsController < ApplicationController
 
   def new
-  	# @gift = Gift.new
+    @group = Group.find(params[:id])
     render :amazon
-
   end
+
 
   def create
   	@gift = Gift.create(gift_params)
@@ -14,10 +14,10 @@ class GiftsController < ApplicationController
   end
 
 
-
-
-
   def amazonSearch
+
+    @group = Group.find(params[:id])
+
     search_phrase = params[:gift][:searchItem]
     request = Vacuum.new('GB')
     @products = []
@@ -43,7 +43,7 @@ class GiftsController < ApplicationController
         product.image = item['MediumImage']['URL']
         product.ASIN = item['ASIN']
         product.URL = item['DetailPageURL']
-        product.purchaseURL = item['purchaseURL']
+        # product.purchaseURL = item['purchaseURL']
         product.Feature = item['ItemAttributes']['Feature']
         product.Price = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 
         product.Summar = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 

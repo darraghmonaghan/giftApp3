@@ -1,10 +1,13 @@
 <%= render "partials/navbar" %>
 
-<div class='container'>
+<ol class="font2 lightGray breadcrumb">
+  <li></li>
+  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+</ol>
 
+<div class='container'>
 	<div class='row'>
 		<div class='col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-offset-3'>
-
 
 			<!-- AMAZON API ALSO ALLOWS TO SET MAXIMUM PRICE IN REQUEST -->
 
@@ -19,11 +22,9 @@
 						    <%= f.submit 'Search', class: "font3 btn btn-default ghost-button" %>
 						
 						<% end %>
-
 		</div>
 	</div>
 	<br><br><br>
-
 
 <%#= @hashed_products %>
 
@@ -45,7 +46,7 @@
 										<div class='col-xs-7 col-sm-6 col-md-7'>
 
 											<p class='font2'><strong>Price<span class='highlight'>:</span></strong> <%= product.Price %></p>
-		    									<%= button_to 'Save Gift', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :URL => product.URL, :product => product.name, :description => product.description }), class: "font3 pageBtn btn btn-default", :method => :post  %>
+		    									<%= button_to 'Save Gift', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :price => product.Price, :URL => product.URL, :title => product.Title, :description => product.description }), class: "font3 pageBtn btn btn-default", :method => :post  %>
 										</div>
 									</div>
 								</div>
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 	<% end %>
-</div>
+</div><br><br><br>
 
 
 <%= render "partials/footer" %>
