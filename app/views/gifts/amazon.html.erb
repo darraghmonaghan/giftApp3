@@ -1,5 +1,6 @@
 <%= render "partials/navbar" %>
 
+<div class='container'>
 
 	<div class='row'>
 		<div class='col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-offset-3'>
@@ -21,33 +22,40 @@
 
 		</div>
 	</div>
-
-<br><br><br>
-
-
-<%= @hashed_products %>
+	<br><br><br>
 
 
-<% if @products != nil %>
-  <% @products.each do |product| %>
-    <div class="product">
+<%#= @hashed_products %>
 
-    	<h3><%= product.Title %></h3>
-    	<p>Feature: <%= product.Feature %></p>
-    	<p>ASIN: <%= product.ASIN %></p>    	
-    	<p>URL: <%= product.URL %></p>
-    	<!-- <p>Purchase URL: <%#= product.purchaseURL %></p> -->
-       	<p>Price: <%= product.Price %></p>
-    	<%= image_tag product.image %>
+	<% if @products != nil %>
+		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+			<div class='panel panel-default'>
+				<% @products.each do |product| %>
+						<div class='panel-body'>
+							<div class='row'>
+								<div class='col-xs-4 col-sm-4 col-md-3 col-lg-4'>
+									<div><%= image_tag product.image, class: 'gift_show_img' %></div>
+								</div>
+								<div class='col-xs-8 col-sm-8 col-md-9 col-lg-8'>
+									<h4 class='font2'><%= product.Title %></h4>
+									<!-- <h5 class='font2'><%#= product.Feature %></h5> -->
 
-    	<%= button_to 'Save Gift', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :URL => product.url, :product => product.name, :description => product.description }), class: "font3 pageBtn btn btn-default", :method => :post  %>
-    	<br><br>
+									<hr class='highlight'>
+									<div class='row'>
+										<div class='col-xs-7 col-sm-6 col-md-7'>
 
-
-    </div>
-  <% end %>
-<% end %>
-
+											<p class='font2'><strong>Price<span class='highlight'>:</span></strong> <%= product.Price %></p>
+		    									<%= button_to 'Save Gift', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :URL => product.URL, :product => product.name, :description => product.description }), class: "font3 pageBtn btn btn-default", :method => :post  %>
+										</div>
+									</div>
+								</div>
+							</div> <!-- Row -->
+						</div><br><br>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
 
 
 <%= render "partials/footer" %>
