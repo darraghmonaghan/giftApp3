@@ -40,7 +40,12 @@ class GiftsController < ApplicationController
     @hashed_products['ItemSearchResponse']['Items']['Item'].each do |item|
         product = OpenStruct.new
         product.name = item['ItemAttributes']['Title']
-        @products << product 
+        product.image = item['MediumImage']['URL']
+        product.id = item['ItemAttributes']['ASIN']
+        product.url = item['ItemAttributes']['DetailPageURL']
+        product.description = item['ItemAttributes']['Feature']        
+        @products << product
+
     end
 
     render :amazon

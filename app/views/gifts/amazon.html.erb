@@ -22,17 +22,19 @@
 <br><br><br>
 
 
-<%= @hashed_roducts %>
+<%= @hashed_products %>
 
 
 <% if @products != nil %>
   <% @products.each do |product| %>
     <div class="product">
 
-    	<%= product %>
+    	<h3><%= product.name %></h3>
+    	<p><%= product.description %></p>
+    	<p><%= product.url %></p>    	
+    	<p><%= product.id %></p>
+    	<%= image_tag product.image %>
 
-      <%#= link_to image_tag(product.image_url), product.url %>
-      <%#= link_to product.name, product.url %>
     </div>
   <% end %>
 <% end %>
