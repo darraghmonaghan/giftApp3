@@ -1,7 +1,9 @@
 class GiftsController < ApplicationController
 
   def new
-    @group = Group.find(params[:id])
+    if current_user
+      @group = Group.find(params[:id])
+    end
     render :amazon
   end
 
@@ -15,7 +17,6 @@ class GiftsController < ApplicationController
 
 
   def amazonSearch
-
     @group = Group.find(params[:id])
 
     search_phrase = params[:gift][:searchItem]
@@ -43,18 +44,48 @@ class GiftsController < ApplicationController
         product.image = item['MediumImage']['URL']
         product.ASIN = item['ASIN']
         product.URL = item['DetailPageURL']
-        # product.purchaseURL = item['purchaseURL']
         product.Feature = item['ItemAttributes']['Feature']
-        product.Price = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 
-        product.Summar = item['OfferSummary']['LowestNewPrice']['FormattedPrice'] 
-
+        product.Price = item['OfferSummary']['LowestNewPrice']['FormattedPrice']
         @products << product
-
     end
-
     render :amazon
-
   end
+
+
+
+  def amazonHPresults
+    search_phrase = params[:gift][:searchItem]
+    request = Vacuum.new('GB')
+    @products = []
+
+    request.configure(
+        aws_access_key_id: ENV['AMAZON_ACCESS_KEY_ID'],
+        aws_secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY'],
+        associate_tag: 'tag'
+    )
+
+    params = {
+      'SearchIndex' => 'All',
+      'Keywords'=> search_phrase,
+      'ResponseGroup' => "ItemAttributes,Images,OfferSummary"
+    }
+
+    raw_response = request.item_search(query: params)
+    @hashed_products = raw_response.to_h
+
+    @hashed_products['ItemSearchResponse']['Items']['Item'].each do |item|
+        product = OpenStruct.new
+        product.Title = item['ItemAttributes']['Title']
+        product.image = item['MediumImage']['URL']
+        product.ASIN = item['ASIN']
+        product.URL = item['DetailPageURL']
+        product.Feature = item['ItemAttributes']['Feature']
+        product.Price = item['OfferSummary']['LowestNewPrice']['FormattedPrice']
+        @products << product
+    end
+    render :amazon
+  end
+
 
 
 

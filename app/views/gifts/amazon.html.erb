@@ -1,9 +1,12 @@
 <%= render "partials/navbar" %>
 
-<ol class="font2 lightGray breadcrumb">
-  <li></li>
-  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
-</ol>
+<% if @group != nil %>
+	<ol class="font2 lightGray breadcrumb">
+	  <li></li>
+	  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+	</ol>
+<% end %>
+
 
 <div class='container'>
 	<div class='row'>
@@ -13,15 +16,32 @@
 
 			<h1 class='font2 text-center'>Gift Search</h1><br>
 
-						<%= form_for :gift, :url => gifts_search_path do |f| %>
+					<!--  -->
+					<% if @group != nil %>							
 
-						    <div class="form-group">
-						    <%= f.text_field :searchItem, placeholder: 'Lets Find the Perfect Gift', class: "font3 form-control", required: true %>
-						    </div>
+							<%= form_for :gift, :url => gifts_search_path do |f| %>
 
-						    <%= f.submit 'Search', class: "font3 btn btn-default ghost-button" %>
-						
-						<% end %>
+							    <div class="form-group">
+							    <%= f.text_field :searchItem, placeholder: 'Lets Find the Perfect Gift', class: "font3 form-control", required: true %>
+							    </div>
+
+							    <%= f.submit 'Search', class: "font3 btn btn-default ghost-button" %>
+							
+							<% end %>
+
+					<% else %>
+
+							<%= form_for :gift, :url => gifts_casual_search_path do |f| %>
+
+							    <div class="form-group">
+							    <%= f.text_field :searchItem, placeholder: 'Lets Find the Perfect Gift', class: "font3 form-control", required: true %>
+							    </div>
+
+							    <%= f.submit 'Search', class: "font3 btn btn-default ghost-button" %>
+							
+							<% end %>
+
+					<% end %>
 		</div>
 	</div>
 	<br><br><br>
@@ -46,7 +66,16 @@
 										<div class='col-xs-7 col-sm-6 col-md-7'>
 
 											<p class='font2'><strong>Price<span class='highlight'>:</span></strong> <%= product.Price %></p>
-		    									<%= button_to 'Save Gift', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :price => product.Price, :URL => product.URL, :title => product.Title, :description => product.description }), class: "font3 pageBtn btn btn-default", :method => :post  %>
+
+											<% if current_user === nil %>
+
+		    										<%= button_to 'Start a Group!', groups_new_path, :method => :get, class: "font3 pageBtn btn btn-default" %>
+
+											<% elsif current_user && params[:id] %>
+
+		    										<%= button_to '+', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :price => product.Price, :URL => product.URL, :title => product.Title, :description => product.description }), class: "font3 addBtn btn btn-default", :method => :post  %>
+		    								<% end %>
+
 										</div>
 									</div>
 								</div>

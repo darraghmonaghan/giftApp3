@@ -15,21 +15,11 @@ class DashboardController < ApplicationController
 	        end
 	    end
 
-
       	# Sorting by Event Date
 		@sorted_groups = @user.groups.sort_by do | item |
 			item[:date]
 		end
-      	
-      	puts 'sorted group objects here!!!!!.......!!!!!'
-      	puts @sorted_groups
-
 	end
-
-
-
-
-
 
 	def show
 	 	# if params[:id] !== current_user.id

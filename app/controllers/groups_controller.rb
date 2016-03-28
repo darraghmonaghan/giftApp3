@@ -51,7 +51,11 @@ class GroupsController < ApplicationController
 
 
   def new
-  	@group = Group.new
+    if current_user === nil
+      redirect_to dashboard_index_path
+    else
+      @group = Group.new
+    end
   end
 
 
