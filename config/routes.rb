@@ -63,7 +63,7 @@ Rails.application.routes.draw do
 
   get '/gifts', to: 'gifts#new'
 
-  post '/gifts', to: 'gifts#amazonHPresults', as: 'gifts_casual_search'
+  # post '/gifts', to: 'gifts#amazonHPresults', as: 'gifts_casual_search'
 
   # post '/gifts/search', to: 'gifts#amazonSearch', as: 'gifts_search'
 
