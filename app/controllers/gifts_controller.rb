@@ -9,6 +9,8 @@ class GiftsController < ApplicationController
 
 
   def create
+    puts 'params from gift Search here!'
+    puts params
   	@gift = Gift.create(gift_params)
   	if @gift.save
   		redirect_to groups_show_path(@gift.group_id)
@@ -17,8 +19,7 @@ class GiftsController < ApplicationController
 
 
   def amazonSearch
-    if params[:id] = 0
-    elsif params[:id] != 0
+    if params[:id] != '0'
       @group = Group.find(params[:id])
     end
 
