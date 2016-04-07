@@ -94,7 +94,7 @@ class GroupsController < ApplicationController
 
 
   def destroy
-    @group = Group.find params[:id]
+    @group = Group.find(params[:id])
     @group.destroy
     redirect_to dashboard_index_path
   end
@@ -103,7 +103,7 @@ class GroupsController < ApplicationController
 private
 
   def group_params
-    params.require(:group).permit(:title, :description, :date, :time, :target, :user_id)  
+    params.require(:group).permit(:title, :description, :date, :target, :user_id)  
   end
 
 
