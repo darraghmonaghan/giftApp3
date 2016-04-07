@@ -39,7 +39,7 @@
 }
 
 .yellow {
-	color: #f2b632;
+	color: #89bdd3;
 }
 
 .white {
@@ -47,13 +47,13 @@
 }
 
 #Gift {
-	color: #89bdd3;	
+	color: #f2b632;	
 }
 
 //////////////////////////////////////////////// highlight featuring
 
 .highlight {
-	color: #f2b632;	
+	color: #89bdd3;	
 }
 
 hr {
@@ -80,7 +80,7 @@ hr {
 }
 
 ul.nav li:hover {
-	background-color: #f2b632;
+	background-color: #89bdd3;
 }
 
 .html.body {
@@ -99,23 +99,23 @@ ul.nav li:hover {
     height: 50px;
     left: 0;
     right: 0;
-    background-image: image-url('orangeBackground.jpg');
+    background-image: image-url('blue.jpg');
 }
 
 
 ///////////////////////////////////////////////////   Buttons
 
 .btn {
-	background-color: #f2b632;
-	border-color: #f2b632;
+	background-color: #89bdd3;
+	border-color: #89bdd3;
 	color: white;
 	border-radius: 0 0 0 0;
 }
 
 .btn:hover {
 	background-color: white;
-	border-color: #f2b632;
-	color: #f2b632;
+	border-color: #89bdd3;
+	color: #89bdd3;
 }
 
 #deleteGroup {
@@ -181,7 +181,7 @@ ul.nav li:hover {
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('orangeBackground.jpg');
+    background-image: image-url('blue.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -196,7 +196,7 @@ ul.nav li:hover {
 .homeBtn:hover {
 	background-color: white;
 	border: solid 2px white;
-	color: #f2b632;
+	color: #98dafc;
 }
 
 ///////////////////////////////////////////////////  Homepage - Feature Description
