@@ -39,7 +39,7 @@
 }
 
 .yellow {
-	color: #89bdd3;
+	color: #54C9FF;
 }
 
 .white {
@@ -53,7 +53,7 @@
 //////////////////////////////////////////////// highlight featuring
 
 .highlight {
-	color: #89bdd3;	
+	color: #54C9FF;	
 }
 
 hr {
@@ -80,7 +80,7 @@ hr {
 }
 
 ul.nav li:hover {
-	background-color: #89bdd3;
+	background-color: #54C9FF;
 }
 
 .html.body {
@@ -97,25 +97,28 @@ ul.nav li:hover {
 .navbar-fixed-bottom {
 	position: fixed;
     height: 50px;
-    left: 0;
-    right: 0;
     background-image: image-url('blue.jpg');
+}
+
+.nav {
+	display:inline-block;
+	float: none;
 }
 
 
 ///////////////////////////////////////////////////   Buttons
 
 .btn {
-	background-color: #89bdd3;
-	border-color: #89bdd3;
+	background-color: #54C9FF;
+	border-color: #54C9FF;
 	color: white;
 	border-radius: 0 0 0 0;
 }
 
 .btn:hover {
 	background-color: white;
-	border-color: #89bdd3;
-	color: #89bdd3;
+	border-color: #54C9FF;
+	color: #54C9FF;
 }
 
 #deleteGroup {
@@ -148,8 +151,8 @@ ul.nav li:hover {
 
 
 .addBtn {
-	background-color: #3fb0ac;
-	border-color: #3fb0ac;
+	background-color: #1ED862;
+	border-color: #1ED862;
 	color: white;
 	border-radius: 50% 50% 50% 50%;
 	margin-top: -7px;
@@ -157,8 +160,8 @@ ul.nav li:hover {
 
 .addBtn:hover {
 	background-color: rgba(255,255,255,0.0);
-	border-color: #3fb0ac;
-	color: #3fb0ac;
+	border-color: #1ED862;
+	color: #1ED862;
 	border-radius: 50% 50% 50% 50%;
 	margin-top: -7px;
 }
@@ -294,12 +297,7 @@ text-align: left;
 
 
 
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////
 
 .jumbotext1 {
 	color: #252839;
@@ -322,22 +320,8 @@ text-align: left;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .newsfeed1 {
-	color: #89bdd3;
+	color: #54C9FF;
 }
 
 .newsfeed2 {
