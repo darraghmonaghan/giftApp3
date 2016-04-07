@@ -39,7 +39,7 @@
 }
 
 .yellow {
-	color: #f2b632;
+	color: #54C9FF;
 }
 
 .white {
@@ -47,13 +47,13 @@
 }
 
 #Gift {
-	color: #89bdd3;	
+	color: #f2b632;	
 }
 
 //////////////////////////////////////////////// highlight featuring
 
 .highlight {
-	color: #f2b632;	
+	color: #54C9FF;	
 }
 
 hr {
@@ -80,7 +80,7 @@ hr {
 }
 
 ul.nav li:hover {
-	background-color: #f2b632;
+	background-color: #54C9FF;
 }
 
 .html.body {
@@ -97,25 +97,28 @@ ul.nav li:hover {
 .navbar-fixed-bottom {
 	position: fixed;
     height: 50px;
-    left: 0;
-    right: 0;
-    background-image: image-url('orangeBackground.jpg');
+    background-image: image-url('blue.jpg');
+}
+
+.nav {
+	display:inline-block;
+	float: none;
 }
 
 
 ///////////////////////////////////////////////////   Buttons
 
 .btn {
-	background-color: #f2b632;
-	border-color: #f2b632;
+	background-color: #54C9FF;
+	border-color: #54C9FF;
 	color: white;
 	border-radius: 0 0 0 0;
 }
 
 .btn:hover {
 	background-color: white;
-	border-color: #f2b632;
-	color: #f2b632;
+	border-color: #54C9FF;
+	color: #54C9FF;
 }
 
 #deleteGroup {
@@ -147,6 +150,22 @@ ul.nav li:hover {
 }
 
 
+.addBtn {
+	background-color: #1ED862;
+	border-color: #1ED862;
+	color: white;
+	border-radius: 50% 50% 50% 50%;
+	margin-top: -7px;
+}
+
+.addBtn:hover {
+	background-color: rgba(255,255,255,0.0);
+	border-color: #1ED862;
+	color: #1ED862;
+	border-radius: 50% 50% 50% 50%;
+	margin-top: -7px;
+}
+
 
 ///////////////////////////////////////////////////   Forms
 
@@ -165,7 +184,7 @@ ul.nav li:hover {
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('orangeBackground.jpg');
+    background-image: image-url('blue.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -180,7 +199,7 @@ ul.nav li:hover {
 .homeBtn:hover {
 	background-color: white;
 	border: solid 2px white;
-	color: #f2b632;
+	color: #98dafc;
 }
 
 ///////////////////////////////////////////////////  Homepage - Feature Description
@@ -233,15 +252,13 @@ ul.nav li:hover {
 }
 
 
-///////////////////////////////////////////////////   Gift show - Gift Image
+///////////////////////////////////////////////////   Gift show & Gift Search
 
 .gift_show_img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 
 /////////////////////////////////////////////////////  Contact Us Form
@@ -280,12 +297,7 @@ text-align: left;
 
 
 
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////
 
 .jumbotext1 {
 	color: #252839;
@@ -308,22 +320,8 @@ text-align: left;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .newsfeed1 {
-	color: #89bdd3;
+	color: #54C9FF;
 }
 
 .newsfeed2 {

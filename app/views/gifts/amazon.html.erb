@@ -1,0 +1,84 @@
+<%= render "partials/navbar" %>
+
+<% if @group != nil %>
+	<ol class="font2 lightGray breadcrumb">
+	  <li></li>
+	  <li><a href="/groups/<%= @group.id %>"><%= @group.title %></a></li>
+	</ol>
+<% end %>
+
+
+<div class='container'>
+	<div class='row'>
+		<div class='col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-offset-3'>
+
+			<!-- AMAZON API ALSO ALLOWS TO SET MAXIMUM PRICE IN REQUEST -->
+
+			<h1 class='font2 text-center'>Gift Search</h1><br>
+
+				<% if params[:id] === nil || params[:id] === 0 %>
+					<% group_id = 0 %>
+				<% elsif %>
+					<% group_id = params[:id] %>
+				<% end %>
+
+				<%= form_for :gift, :url => gifts_search_path(group_id) do |f| %>
+
+						<div class="form-group">
+							<%= f.text_field :searchItem, placeholder: 'Lets Find the Perfect Gift', class: "font3 form-control", required: true %>
+
+						</div>
+						<%= f.submit 'Search', class: "font3 btn btn-default ghost-button" %>
+							
+				<% end %>
+
+		</div>
+	</div>
+	<br><br><br>
+
+	<% if @products != nil %>
+		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+			<div class='panel panel-default'>
+				<% @products.each do |product| %>
+						<div class='panel-body'>
+							<div class='row'>
+								<div class='col-xs-4 col-sm-4 col-md-3 col-lg-4'>
+									<div><%= image_tag product.image, class: 'gift_show_img' %></div>
+								</div>
+								<div class='col-xs-8 col-sm-8 col-md-9 col-lg-8'>
+									<h4 class='font2'><%= product.Title %></h4>
+									<!-- <h5 class='font2'><%#= product.Feature %></h5> -->
+
+									<hr class='highlight'>
+									<div class='row'>
+										<div class='col-xs-7 col-sm-6 col-md-7'>
+
+											<p class='font2'><strong>Price<span class='highlight'>:</span></strong> <%= product.Price %></p>
+
+											<% if current_user %>
+
+												<!-- params ID aspect not working -->        
+
+													<%= button_to '+', gifts_create_path(:gift => { :controller => "gift", :action => "create", :group_id => params[:id], :user_id => current_user.id, :avatar => product.image, :price => product.Price, :URL => product.URL, :title => product.Title, :description => product.description }), class: "font3 addBtn btn btn-default", :method => :post  %>
+
+
+											<% elsif current_user === nil %>
+													
+													<%= button_to 'Start a Group!', groups_new_path, :method => :get, class: "font3 pageBtn btn btn-default" %>
+
+		    										
+		    								<% end %>
+
+										</div>
+									</div>
+								</div>
+							</div> <!-- Row -->
+						</div><br><br>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div><br><br><br>
+
+
+<%= render "partials/footer" %>

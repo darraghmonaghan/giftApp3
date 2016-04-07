@@ -50,7 +50,6 @@ Rails.application.routes.draw do
 
   delete '/groups/:id', to: 'groups#destroy', as: 'destroy_group'
 
-  # get '/groups/:id/stripe', to: 'groups#stripe', as: 'group_stripe'
 
   ############################
 
@@ -59,6 +58,14 @@ Rails.application.routes.draw do
   get '/groups/:group_id/gifts/:id', to: 'gifts#show', as: 'gifts_show'
 
   post '/gifts/create', to: 'gifts#create', as: 'gifts_create'
+
+  post '/groups/:id/gifts', to: 'gifts#amazonSearch', as: 'gifts_search'
+
+  get '/gifts', to: 'gifts#new'
+
+  # post '/gifts', to: 'gifts#amazonHPresults', as: 'gifts_casual_search'
+
+  # post '/gifts/search', to: 'gifts#amazonSearch', as: 'gifts_search'
 
   ############################
 

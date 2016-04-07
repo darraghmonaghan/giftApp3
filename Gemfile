@@ -35,6 +35,8 @@ gem 'omniauth-stripe-connect'
 
 gem 'stripe'
 
+gem 'vacuum', '~> 1.4'
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
