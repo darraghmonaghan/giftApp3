@@ -9,8 +9,18 @@ class GiftsController < ApplicationController
 
 
   def create
-    puts 'params from gift Search here!'
-    puts params
+
+    group = Group.find(params[:id])
+    user_SMS = []
+
+    group.users each do | user |
+      user_SMS.push(user.phone)
+    end
+
+
+
+
+
   	@gift = Gift.create(gift_params)
   	if @gift.save
   		redirect_to groups_show_path(@gift.group_id)
