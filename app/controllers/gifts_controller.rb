@@ -9,16 +9,36 @@ class GiftsController < ApplicationController
 
 
   def create
+    require 'rubygems'
+    require 'twilio-ruby'
 
-    group = Group.find(params[:id])
+    group = Group.find(params[:gift][:group_id])
     user_SMS = []
 
-    group.users each do | user |
+
+    #### Consolidating User Phone Numbers ####
+    group.users.each do | user |
       user_SMS.push(user.phone)
     end
 
+    puts 'Array of SMS numbers HERE'
+    puts user_SMS
 
 
+    #### Twilio SMS sending ####
+    client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+    my_twilio_number = '+441934446036'
+
+    user_SMS.each do | number |
+        if (number != nil) 
+            client.account.messages.create(
+                :from => my_twilio_number,
+                :to => number,
+                :body => ('Somebody just suggested a new gift idea for ' + group.title + ', checkout it out at WeShallGift!')
+            )
+            puts 'SMS sent.......'
+        end
+    end
 
 
   	@gift = Gift.create(gift_params)
