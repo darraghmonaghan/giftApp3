@@ -35,6 +35,8 @@ gem 'omniauth-stripe-connect'
 
 gem 'stripe'
 
+gem 'twilio-ruby', '~> 4.11', '>= 4.11.1'
+
 gem 'vacuum', '~> 1.4'
 
 gem 'rails_12factor', group: :production
