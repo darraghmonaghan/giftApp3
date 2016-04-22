@@ -8,11 +8,11 @@ class GroupsController < ApplicationController
   def stripe
     @user = current_user
 
-    # if @user.publishable_key === nil
-    #      render 'stripe'
-    # else
+    if @user.publishable_key === nil
+         render 'stripe'
+    else
         redirect_to groups_new_path
-    # end
+    end
   end
 
 
