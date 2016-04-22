@@ -2,6 +2,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.alignedButtons {
+	display: inline-block;
+}
+
 
 /////////////////////////////////////////// Font styles
 
@@ -94,8 +98,8 @@ ul.nav li:hover {
 
 ///////////////////////////////////////////////////   Footer
 
-.navbar-fixed-bottom {
-	position: fixed;
+.navbar-static-bottom {
+
     height: 50px;
     background-image: image-url('blue.jpg');
 }

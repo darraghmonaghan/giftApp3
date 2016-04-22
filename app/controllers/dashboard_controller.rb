@@ -5,13 +5,17 @@ class DashboardController < ApplicationController
 	def index
       	@user = current_user
 	 	groups = []
-      	@newsfeed_posts = []
+      	newsfeed_posts = []
 
 	    @user.groups.each do | group |
 	        groups.push(group)
 
 	        group.posts.each do | posts |
-	            @newsfeed_posts.push(posts)
+	            newsfeed_posts.push(posts)
+
+	            @sorted_newsfeed_posts = newsfeed_posts.sort_by do | item |
+	            	item[:created_at]
+	            end
 	        end
 	    end
 

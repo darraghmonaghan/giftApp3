@@ -4,40 +4,39 @@
 
   <div id="main-container" class="container">
     <div class="row">
-
       <div id="content" class="col-md-12">
         <div class="form-container">
         
 
-            <h2 class="font2 midGray form-signin-heading text-center">Edit Event Group</h2><br>
-            <%= form_for @group, url: groups_update_path do |f| %> 
-            <div class="form-group">
-              <%= f.text_field :title, placeholder: 'Name of Group', class: "font3 darkGray form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.text_field :description, placeholder: 'Description of the Event', class: "font3 form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.date_field :date, placeholder: 'Date of the Event', class: "font3 darkGray form-control", required: true %>
-            </div>
-			       
-             <%= f.hidden_field :user_id, :value => current_user.id %>
-          
-          		<div>
-             		<%= f.submit "Update the Group", id: 'updateGroup', class: "font2 btn btn-default ghost-button" %>
-             		<%= button_to "Delete Group", { :action => "destroy", :id => @group.id }, :confirm => "Are you sure?", :method => :delete, id: 'deleteGroup', class: "pull-right font3 darkGray btn btn-default ghost-button" %>
-             	</div>
-              <% end %>
-
-
-
-
+                <h2 class="font2 midGray form-signin-heading text-center">Edit Event Group</h2><br>
+                    <%= form_for @group, url: groups_update_path do |f| %> 
+                <div class="form-group">
+                    <%= f.text_field :title, placeholder: 'Name of Group', class: "font3 darkGray form-control", required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.text_field :description, placeholder: 'Description of the Event', class: "font3 form-control", required: true %>
+                </div>
+                <div class="form-group">
+                    <%= f.date_field :date, placeholder: 'Date of the Event', class: "font3 darkGray form-control", required: true %>
+                </div>
+    			       
+                    <%= f.hidden_field :user_id, :value => current_user.id %>
               
-             </div>
-        </div>
-      </div>
+                <div class='alignedButtons'>
+                    <%= f.submit "Update the Group", id: 'updateGroup', class: "font2 btn btn-default ghost-button" %>
+                  </div>
+
+                <% end %><br>
+
+                <div class='alignedButtons'>
+                  <%= button_to "Delete Group", { :action => "destroy", :id => @group.id }, :confirm => "Are you sure?", :method => :delete, id: 'deleteGroup', class: "font3 darkGray btn btn-default ghost-button" %>
+                </div>
+
+
+
+      </div><br><br><br><br><br><br><br>
     </div>
+  </div><%= render "partials/footer" %>
 </div>
 
 
-<%= render "partials/footer" %>
